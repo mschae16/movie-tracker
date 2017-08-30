@@ -10,8 +10,8 @@ const mapStateToProps = (store) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    handleLoginSubmit: (username, password) => {
-      dispatch(LoginAction(username, password))
+    handleLoginSubmit: (email, password) => {
+      dispatch(LoginAction(email, password))
     }
   }
 }

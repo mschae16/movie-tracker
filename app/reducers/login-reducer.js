@@ -1,13 +1,11 @@
-const login = (store = [], action) => {
-  switch (action.type) {
-    case "LOG_IN": {
-      return [
-        ...store,
-        { username: action.username, password: action.password }
-      ];
-    }
-
-    default:
-      return store;
-  }
+const login = (state = {}, action) => {
+	switch (action.type) {
+		case 'LOG_IN': {
+			return Object.assign({ state }, { email: action.email, password: action.password });
+		}
+		default:
+			return state;
+	}
 };
+
+export default login;

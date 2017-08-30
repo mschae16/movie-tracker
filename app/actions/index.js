@@ -1,7 +1,7 @@
-export default const LoginAction = (username, password) => {
+export const LoginAction = (email, password) => {
   return {
     type: 'LOG_IN',
-    username,
+    email,
     password
   }
 }
