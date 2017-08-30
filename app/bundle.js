@@ -65,7 +65,7 @@
 	
 	var _app2 = _interopRequireDefault(_app);
 	
-	var _movieIndex = __webpack_require__(186);
+	var _movieIndex = __webpack_require__(188);
 	
 	var _movieIndex2 = _interopRequireDefault(_movieIndex);
 	
@@ -22213,6 +22213,10 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
+	var _apiUtils = __webpack_require__(186);
+	
+	var _apiUtils2 = _interopRequireDefault(_apiUtils);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -22228,7 +22232,12 @@
 	    _classCallCheck(this, App);
 	
 	    return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this));
+	    // this.apiHelper = new ApiHelper()
 	  }
+	
+	  // componentDidMount() {
+	  //   this.apiHelper.fetchMovies()
+	  // }
 	
 	  _createClass(App, [{
 	    key: 'render',
@@ -22257,6 +22266,58 @@
 
 /***/ }),
 /* 186 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _lauraKey = __webpack_require__(187);
+	
+	var _lauraKey2 = _interopRequireDefault(_lauraKey);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	var ApiHelper = function () {
+	  function ApiHelper() {
+	    _classCallCheck(this, ApiHelper);
+	
+	    this.recentMovies = {};
+	  }
+	
+	  _createClass(ApiHelper, [{
+	    key: 'fetchMovies',
+	    value: function fetchMovies(apiKey) {
+	      fetch('https://api.themoviedb.org/3/movie/latest?' + apiKey + '=<<' + apiKey + '>>&language=en-US').then(function (response) {
+	        return response.JSON();
+	      }).then(function (parsedResponse) {
+	        return console.log(parsedResponse);
+	      });
+	    }
+	  }]);
+	
+	  return ApiHelper;
+	}();
+	
+	exports.default = ApiHelper;
+
+/***/ }),
+/* 187 */
+/***/ (function(module, exports) {
+
+	export default {
+	  lauraKey: 'ba0993c341c9d28ee2f7a29572ff918d'
+	}
+
+
+/***/ }),
+/* 188 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
