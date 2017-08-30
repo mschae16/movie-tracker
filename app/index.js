@@ -16,9 +16,6 @@ const devTools =
 	window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
 const store = configureStore(devTools)
 
-// const history = syncHistoryWithStore(browserHistory, store)
-//BrowserRouter - add it....somehow
-
 const router = (
 	<Provider store={store}>
     <ConnectedRouter history={history}>

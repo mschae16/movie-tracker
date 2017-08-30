@@ -1,7 +1,7 @@
 import React from 'react';
 import LoginContainer from '../../containers/loginContainer';
 import MovieIndexContainer from '../../containers/movieIndexContainer';
-// import CreateUser from '../createuser/createuser';
+import CreateUser from '../createuser/createuser';
 import { Route } from 'react-router';
 
 const App = () => {
@@ -9,12 +9,10 @@ const App = () => {
 		<div>
 			<Route exact path="/login" component={LoginContainer} />
 			<Route exact path="/" component={MovieIndexContainer} />
+      <Route exact path="/createuser" component={CreateUser} />
 		</div>
 	);
 };
 
-// <Route exact path='/login' component={ Login } />
-// <Route exact path='/' render={ ()=> <MovieIndex movieData={ movieData }/>} />
-// <Route exact path='/createuser' component={ CreateUser } />
 
 export default App;
