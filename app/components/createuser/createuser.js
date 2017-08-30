@@ -11,21 +11,25 @@ class CreateUser extends Component {
 	}
 
 	captureUserData() {
-		const { createUser } = this.props;
 
 		const user = {
 			name: this.state.name.toLowerCase(),
 			email: this.state.email.toLowerCase(),
 			password: this.state.password.toLowerCase()
 		};
-
-		createUser(user);
+    console.log(this.props);
+		this.props.createUser(user);
 	}
 
 	render() {
 		return (
 			<div>
-				<form onSubmit={() => captureUserData()}>
+				<form
+					onSubmit={e => {
+						e.preventDefault();
+						this.captureUserData();
+					}}
+				>
 					<input
 						type="text"
 						placeholder="Name"
