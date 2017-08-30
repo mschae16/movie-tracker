@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ApiHelper from '../../helpers/apiUtils';
 import MovieIndex from '../movieindex/movieindex';
 import Login from '../login/login';
+import LoginContainer from '../../containers/LoginContainer'
 import CreateUser from '../createuser/createuser';
 import { Route, NavLink, Link } from 'react-router-dom';
 
@@ -22,6 +23,9 @@ export default class App extends Component {
         })
       })
   }
+  // <Route exact path='/login' component={ Login } />
+  // <Route exact path='/' render={ ()=> <MovieIndex movieData={ movieData }/>} />
+  // <Route exact path='/createuser' component={ CreateUser } />
 
   render() {
 
@@ -29,9 +33,8 @@ export default class App extends Component {
 
     return (
       <div>
-        <Route exact path='/' render={ ()=> <MovieIndex movieData={ movieData }/>} />
-        <Route exact path='/login' component={ Login } />
-        <Route exact path='/createuser' component={ CreateUser } />
+        <LoginContainer />
+        <MovieIndex movieData={ movieData }/>
       </div>
     )
   }
