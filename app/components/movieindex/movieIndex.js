@@ -1,4 +1,5 @@
 import React from 'react';
+// import './movieIndex.css';
 
 const MovieIndex = ({ movieData }) => {
 
