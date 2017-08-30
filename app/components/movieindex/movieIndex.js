@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import './movieIndex.css';
+
 
 export default class MovieIndex extends Component {
 
@@ -18,7 +18,7 @@ export default class MovieIndex extends Component {
 
 
   const mappedMovieData = this.props.movieData.map(movie => {
-    return <div key={movie.title}>{movie.title}</div>
+    return <div className="wrapper" key={movie.title}>{movie.title}</div>
   })
 
     return (
