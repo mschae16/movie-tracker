@@ -1,11 +1,20 @@
-const login = (state = {}, action) => {
+export const loginSuccess = (state = '', action) => {
 	switch (action.type) {
-		case 'LOG_IN': {
-			return Object.assign({ state }, { email: action.email, password: action.password });
+		case 'LOGIN_SUCCESS': {
+			return action.status
 		}
 		default:
 			return state;
 	}
 };
 
-export default login;
+export const loginHasErred = (state = false, action) => {
+	switch (action.type) {
+		case 'LOGIN_HAS_ERRED': {
+			return action.loginErred
+		}
+
+		default:
+			return state
+	}
+}
