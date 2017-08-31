@@ -11,9 +11,7 @@ const MovieCard = ({ title, overview, backdrop_path, poster_path, release_date }
   return (
     <div className='movie-card'>
     <img className='movie-image' src={backDrop} alt="backdrop image"/>
-    <h2>{title}</h2>
-    <p>{overview}</p>
-    <p>{release_date}</p>
+    <h5 className="movie-title">{title}</h5>
     </div>
   )
 }
