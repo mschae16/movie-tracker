@@ -2,8 +2,9 @@ import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 
 export default class NavHeader extends Component {
+
   render() {
-    const { loginSuccess, createUserSuccess } = this.props;
+    const { loginSuccess, createUserSuccess, handleSignOut } = this.props;
 
     return (
       <div>
@@ -36,7 +37,7 @@ export default class NavHeader extends Component {
           )}
 
           {(createUserSuccess === "success" || loginSuccess === "success") && (
-            <button>Sign Out</button>
+            <button onClick={ () => handleSignOut() }>Sign Out</button>
           )}
         </section>
       </div>

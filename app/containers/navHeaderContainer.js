@@ -1,5 +1,6 @@
-import { connect } from 'react-redux'
-import NavHeader from '../components/navheader/NavHeader'
+import { connect } from 'react-redux';
+import NavHeader from '../components/navheader/NavHeader';
+import { signOutUser } from '../actions';
 
 const mapStateToProps = (store) => {
   return {
@@ -8,4 +9,10 @@ const mapStateToProps = (store) => {
   }
 }
 
-export default connect(mapStateToProps, null)(NavHeader)
+const mapDispatchToProps = (dispatch) => {
+  return {
+    handleSignOut: () => dispatch(signOutUser())
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(NavHeader)

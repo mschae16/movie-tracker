@@ -1,5 +1,4 @@
 
-
 export const loginHasErred = bool => {
   return {
     type: "LOGIN_HAS_ERRED",
@@ -105,3 +104,26 @@ export const createUser = newUser => {
       .catch(() => dispatch(createUserErred(true)));
   };
 };
+
+export const logOutUser = (loginSuccess) => {
+  return {
+    type: "LOG_OUT_USER",
+    loginSuccess
+  }
+}
+
+export const createUserSignOut = (createUserSuccess) => {
+  return {
+    type: "CREATE_USER_SIGNOUT",
+    createUserSuccess
+  }
+}
+
+export const signOutUser = (loginSuccess, createUserSuccess) => {
+  return dispatch => {
+    loginSuccess = '';
+    createUserSuccess = {};
+    dispatch(createUserSignOut(createUserSuccess));
+    dispatch(logOutUser(loginSuccess));
+  }
+}
