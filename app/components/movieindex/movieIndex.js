@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import MovieCard from '../moviecard/movieCard';
 
 export default class MovieIndex extends Component {
   componentDidMount() {
@@ -18,15 +19,7 @@ export default class MovieIndex extends Component {
     }
 
     const mappedMovieData = movieData.map(movie => {
-      return (
-        <div className="movie-card" key={movie.title}>
-          <h5 className="movie-title">{movie.title}</h5>
-          <img
-            className="movie-image"
-            src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
-          />
-        </div>
-      );
+      return <MovieCard key={movie.title} { ...movie } />
     });
 
     return (
