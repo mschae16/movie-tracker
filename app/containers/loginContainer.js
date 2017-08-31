@@ -1,17 +1,18 @@
 import { connect } from 'react-redux';
-import { LoginAction } from '../actions';
+import { loginUser } from '../actions';
 import Login from '../components/login/login';
 
 const mapStateToProps = (store) => {
   return {
-    loginInfo: store.login
+    loginSuccess: store.loginSuccess,
+    loginHasErred: store.loginHasErred
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    handleLoginSubmit: (email, password) => {
-      dispatch(LoginAction(email, password))
+    handleLoginSubmit: (user) => {
+      dispatch(loginUser(user))
     }
   }
 }
