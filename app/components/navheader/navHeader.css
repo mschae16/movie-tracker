@@ -10,7 +10,7 @@
 
 .navigation-wrapper {
   display: flex;
-  background: #E71D36;
+  background: #011627;
   color: #FDFFFC;
   width:100%;
   overflow:hidden;
@@ -30,14 +30,12 @@
 }
 
 .nav {
-  color: green;
+  color: #FF9F1C;
+  padding: 20px;
   text-decoration: none;
 }
 
 .selected {
-  color: yellow;
+  color: #2EC4B6;
   text-decoration: none;
 }
-
-/*background: linear-gradient(to right, rgba(34, 25, 29, 0.75) 0%, rgba(34, 25, 29, 0.79) 28%, rgba(34, 25, 29, 0.83) 43%, rgba(34, 25, 29, 0.95) 72%, rgba(34, 25, 29, 1) 100%);*/
-/*color: #d4aa56*/

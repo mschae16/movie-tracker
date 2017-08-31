@@ -10,28 +10,40 @@ body {
 }
 
 .wrapper {
-  background: #2EC4B6;
+  background: #fff;
   display: grid;
-  grid-template-columns: 25% 25% 25% 25%;
-  grid-auto-rows: minmax(300px, auto);
+  grid-template-columns: 24% 24% 24% 24%;
+  grid-column-gap: 1em;
+  grid-auto-rows: minmax(250px, auto);
   width: 100%;
 }
 
 .movie-card {
-  background: #2EC4B6;
+  background: #3C4954;
   border: 1px solid white;
   color: #fff;
   font-size: 30px;
-  /*animation-name: fade;
-  animation-duration: 8s;*/
+  box-shadow: 7px 4px 4px #1C2328;
+  height: 222px;
 }
 
+.movie-image {
+  animation-name: fade;
+  animation-duration: 8s;
+  width: 100%;
+}
 
- /*@keyframes fade {
+.movie-title {
+  background: #E71D36;
+  border-bottom: 1px solid #FF9F1C;
+  font-size: 22px;
+}
+
+ @keyframes fade {
   0% {
     opacity: 0;
   }
   100% {
     opacity: 1;
   }
-}*/
+}
