@@ -1,13 +1,31 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
 .wrapper {
   background: #FDFFFC;
   display: grid;
-  grid-template-columns: 33% 33% 33%;
-  grid-gap: 1em;
+  grid-template-columns: 25% 25% 25% 25%;
   grid-auto-rows: minmax(300px, auto);
+  width: 100%;
 }
 
 .movie-card {
   background: #2EC4B6;
+  border: 1px solid white;
   color: #fff;
   font-size: 40px;
+}
+
+.movie-tracker-header {
+  background: #E71D36;
+  font-size: 35px;
+  width: 100%;
 }
