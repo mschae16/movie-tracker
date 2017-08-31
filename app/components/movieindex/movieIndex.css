@@ -5,9 +5,3 @@
   grid-gap: 1em;
   grid-auto-rows: minmax(300px, auto);
 }
-
-.movie-card {
-  background: #2EC4B6;
-  color: #fff;
-  font-size: 40px;
-}

@@ -13,7 +13,7 @@ export default class NavHeader extends Component {
     }
 
 		return (
-			<div classNamegit ="navigation-container">
+			<div className="navigation-container">
 				<h1>Movie Tracker</h1>
 				<NavLink to="/">Home</NavLink>
 

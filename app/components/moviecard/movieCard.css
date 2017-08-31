@@ -1,0 +1,12 @@
+.movie-card {
+  background: #2EC4B6;
+  display: grid;
+  color: #000;
+  font-size: 20px;
+  /*grid-template-rows: 100%;
+  grid-template-columns: 100%;*/
+}
+
+/*.movie-image {
+  grid-column:
+}*/

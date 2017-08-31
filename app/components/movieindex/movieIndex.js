@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import MovieCard from '../moviecard/movieCard';
 
 export default class MovieIndex extends Component {
   componentDidMount() {
@@ -18,11 +19,7 @@ export default class MovieIndex extends Component {
     }
 
     const mappedMovieData = movieData.map(movie => {
-      return (
-        <div className="movie-card" key={movie.title}>
-          {movie.title}
-        </div>
-      );
+      return <MovieCard key={movie.title} { ...movie } />
     });
 
     return <div className="wrapper">{mappedMovieData}</div>;
