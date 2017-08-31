@@ -1,0 +1,38 @@
+.login-form {
+  background: #E6E8E5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 50%;
+  height: 100vh;
+}
+
+.login-input {
+  height: 30px;
+  width: 60%;
+  margin-bottom: 10px;
+}
+
+.login-message {
+  color: #2EC4B6;
+  margin: 25px 0;
+}
+
+.create-user:hover {
+  color: #1C2328;
+  cursor: pointer;
+}
+
+.login {
+  background: #E71D36;
+  border: none;
+  font-size: 20px;
+  color: #FDFFFC;
+  width: 60%;
+}
+
+.login:hover {
+  background: #2F3942;
+  cursor: pointer;
+}
