@@ -1,7 +1,12 @@
 .movie-card {
   background: black;
-  box-shadow: 7px 4px 4px #1C2328;
+  box-shadow: 7px 4px 4px #1c2328;
   overflow: hidden;
+}
+
+.movie-card:hover {
+  cursor: pointer;
+  opacity: 0.5;
 }
 
 .movie-image {
@@ -12,13 +17,13 @@
 }
 
 .movie-title {
-  background: #E71D36;
-  border-bottom: 1px solid #FF9F1C;
-  color: #FFFFFF;
+  background: #e71d36;
+  border-bottom: 1px solid #ff9f1c;
+  color: #ffffff;
   font-size: 24px;
 }
 
- @keyframes fade {
+@keyframes fade {
   0% {
     opacity: 0;
   }
@@ -26,3 +31,16 @@
     opacity: 1;
   }
 }
+
+/*.favorite-button {
+  background: white;
+  opacity: 0.7;
+  border: 2px solid black;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+}
+
+.favorite-button:hover {
+  cursor: pointer;
+}*/

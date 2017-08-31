@@ -22,3 +22,5 @@ const MovieCard = ({
 };
 
 export default MovieCard;
+
+// <button className="favorite-button">Fav</button>

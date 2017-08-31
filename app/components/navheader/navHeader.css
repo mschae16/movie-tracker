@@ -2,13 +2,15 @@
   font-family: 'Cantarell', sans-serif;
   font-size: 50px;
   height: 100px;
-  padding: 5px;
+  padding: 15px;
+  margin-right: 60px;
   text-align: left;
   text-shadow: 2px 0 3px #FF0000, 2px 0 5px #0000FF;
-  width: 50%;
+  width: 60%;
 }
 
 .navigation-wrapper {
+  align-items: baseline;
   animation: 2s slide-right;
   background: #011627;
   color: #FDFFFC;
@@ -31,8 +33,14 @@
 
 .nav {
   color: #FF9F1C;
+  border-left: 1.5px solid #011627;
   padding: 20px;
   text-decoration: none;
+}
+
+.nav:hover {
+  border-left: 1.5px solid #E71D36;
+  cursor: pointer;
 }
 
 .selected {
