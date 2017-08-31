@@ -20,11 +20,19 @@ export default class MovieIndex extends Component {
     const mappedMovieData = movieData.map(movie => {
       return (
         <div className="movie-card" key={movie.title}>
-          {movie.title}
+          <h5 className="movie-title">{movie.title}</h5>
+          <img
+            className="movie-image"
+            src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
+          />
         </div>
       );
     });
 
-    return <div className="wrapper">{mappedMovieData}</div>;
+    return (
+      <div>
+        <section className="wrapper">{mappedMovieData}</section>
+      </div>
+    );
   }
 }
