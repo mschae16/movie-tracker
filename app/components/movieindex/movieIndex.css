@@ -1,7 +1,49 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
 .wrapper {
-  background: #FDFFFC;
+  background: #fff;
   display: grid;
-  grid-template-columns: 33% 33% 33%;
-  grid-gap: 1em;
-  grid-auto-rows: minmax(300px, auto);
+  grid-template-columns: 24% 24% 24% 24%;
+  grid-column-gap: 1em;
+  grid-auto-rows: minmax(250px, auto);
+  width: 100%;
+}
+
+.movie-card {
+  background: #3C4954;
+  border: 1px solid white;
+  color: #fff;
+  font-size: 30px;
+  box-shadow: 7px 4px 4px #1C2328;
+  height: 222px;
+}
+
+.movie-image {
+  animation-name: fade;
+  animation-duration: 8s;
+  width: 100%;
+}
+
+.movie-title {
+  background: #E71D36;
+  border-bottom: 1px solid #FF9F1C;
+  font-size: 22px;
+}
+
+ @keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

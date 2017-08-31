@@ -22,6 +22,10 @@ export default class MovieIndex extends Component {
       return <MovieCard key={movie.title} { ...movie } />
     });
 
-    return <div className="wrapper">{mappedMovieData}</div>;
+    return (
+      <div>
+        <section className="wrapper">{mappedMovieData}</section>
+      </div>
+    );
   }
 }
