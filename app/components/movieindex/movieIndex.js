@@ -8,15 +8,16 @@ export default class MovieIndex extends Component {
   }
 
   render() {
-    if (this.props.hasErred) {
+    const { createUserSuccess, hasErred, isLoading, movieData, loginSuccess } = this.props
+    if (hasErred) {
       return <p>You fucked up</p>;
     }
 
-    if (this.props.isLoading) {
+    if (isLoading) {
       return <p>Loading...</p>;
     }
 
-    const mappedMovieData = this.props.movieData.map(movie => {
+    const mappedMovieData = movieData.map(movie => {
       return (
         <div className="movie-card" key={movie.title}>
           <h5 className="movie-title">{movie.title}</h5>
