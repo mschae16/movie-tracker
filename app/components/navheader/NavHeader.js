@@ -20,13 +20,13 @@ export default class NavHeader extends Component {
             Home
           </NavLink>
 
-          {loginSuccess !== "success" && createUserSuccess !== 'success' && (
+          {(loginSuccess !== "success" && createUserSuccess !== 'success') && (
             <NavLink activeClassName="selected" className="nav" to="/login">
               Login
             </NavLink>
           )}
 
-          {createUserSuccess !== "success" && loginSuccess !== 'success' && (
+          {(createUserSuccess !== "success" && loginSuccess !== 'success') && (
             <NavLink
               activeClassName="selected"
               className="nav"
