@@ -26,6 +26,12 @@ body {
 
 .movie-tracker-header {
   background: #E71D36;
-  font-size: 35px;
+  color: #FDFFFC;
+  text-shadow: 2px 0 3px #FF0000, 2px 0 5px #0000FF;
+  font-size: 50px;
+  font-family: 'Cantarell', sans-serif;
+  text-align: left;
+  padding: 5px;
+  height: 150px;
   width: 100%;
 }
