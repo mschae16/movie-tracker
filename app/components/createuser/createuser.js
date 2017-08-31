@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Redirect } from 'react-router'
 
 class CreateUser extends Component {
   constructor() {
@@ -27,6 +28,12 @@ class CreateUser extends Component {
   }
 
   render() {
+    const { status } = this.props.createUserSuccess
+    if (status === 'success') {
+      return (
+        <Redirect to='/' />
+      )
+    }
     return (
       <div>
         <form

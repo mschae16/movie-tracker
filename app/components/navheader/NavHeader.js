@@ -1,8 +1,17 @@
 import React, { Component } from 'react';
-import { Route, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 export default class NavHeader extends Component {
 	render() {
+		const { loginSuccess, createUserSuccess } = this.props
+		console.log(this.props);
+		if (createUserSuccess === 'success' || loginSuccess === 'success') {
+			console.log('success sign out');
+      return (
+        <button>Sign Out</button>
+      )
+    }
+
 		return (
 			<div classNamegit ="navigation-container">
 				<h1>Movie Tracker</h1>
