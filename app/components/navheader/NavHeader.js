@@ -1,21 +1,26 @@
-import React, { Component } from 'react';
-import { Route, NavLink } from 'react-router-dom';
+import React, { Component } from "react";
+import { Route, NavLink } from "react-router-dom";
 
 export default class NavHeader extends Component {
-	render() {
-		return (
-			<div classNamegit ="navigation-container">
-				<h1>Movie Tracker</h1>
-				<NavLink to="/">Home</NavLink>
+  render() {
+    return (
+      <div>
+        <section className="navigation-wrapper">
+					<div className="slide-right">
+          	<header className="movie-tracker-header">MovieTracker</header>
+					</div>
 
-				<NavLink to="/login">Login</NavLink>
+          <p> Hello NAME </p>
+					<p> Favorites </p>
+          <p>Logout</p>
 
-				<NavLink to="/createuser">CreateUser</NavLink>
-			</div>
-		);
-	}
+          <NavLink activeClassName="selected" className="nav" to="/">Home</NavLink>
+
+          <NavLink activeClassName="selected" className="nav" to="/login">Login</NavLink>
+
+          <NavLink activeClassName="selected" className="nav" to="/createuser">CreateUser</NavLink>
+        </section>
+      </div>
+    );
+  }
 }
-
-// export default NavHeader;
-
-//***probably need to make this a child component of NavHeader container***

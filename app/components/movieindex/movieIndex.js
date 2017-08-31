@@ -26,7 +26,6 @@ export default class MovieIndex extends Component {
 
     return (
     <div>
-      <header className="movie-tracker-header">MovieTracker</header>
       <section className="wrapper">
         {mappedMovieData}
       </section>

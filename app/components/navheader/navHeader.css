@@ -1,0 +1,43 @@
+.movie-tracker-header {
+  text-shadow: 2px 0 3px #FF0000, 2px 0 5px #0000FF;
+  font-size: 50px;
+  font-family: 'Cantarell', sans-serif;
+  text-align: left;
+  padding: 5px;
+  height: 100px;
+  width: 50%;
+}
+
+.navigation-wrapper {
+  display: flex;
+  background: #E71D36;
+  color: #FDFFFC;
+  width:100%;
+  overflow:hidden;
+  animation: 2s slide-right;
+}
+
+@keyframes slide-right {
+  from {
+    margin-left: -100%;
+    width: 300%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+.nav {
+  color: green;
+  text-decoration: none;
+}
+
+.selected {
+  color: yellow;
+  text-decoration: none;
+}
+
+/*background: linear-gradient(to right, rgba(34, 25, 29, 0.75) 0%, rgba(34, 25, 29, 0.79) 28%, rgba(34, 25, 29, 0.83) 43%, rgba(34, 25, 29, 0.95) 72%, rgba(34, 25, 29, 1) 100%);*/
+/*color: #d4aa56*/
