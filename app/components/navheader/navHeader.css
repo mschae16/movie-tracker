@@ -1,20 +1,20 @@
 .movie-tracker-header {
-  text-shadow: 2px 0 3px #FF0000, 2px 0 5px #0000FF;
-  font-size: 50px;
   font-family: 'Cantarell', sans-serif;
-  text-align: left;
-  padding: 5px;
+  font-size: 50px;
   height: 100px;
+  padding: 5px;
+  text-align: left;
+  text-shadow: 2px 0 3px #FF0000, 2px 0 5px #0000FF;
   width: 50%;
 }
 
 .navigation-wrapper {
-  display: flex;
+  animation: 2s slide-right;
   background: #011627;
   color: #FDFFFC;
-  width:100%;
+  display: flex;
   overflow:hidden;
-  animation: 2s slide-right;
+  width:100%;
 }
 
 @keyframes slide-right {

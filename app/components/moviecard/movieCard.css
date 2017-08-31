@@ -1,0 +1,28 @@
+.movie-card {
+  background: black;
+  box-shadow: 7px 4px 4px #1C2328;
+  overflow: hidden;
+}
+
+.movie-image {
+  animation-name: fade;
+  animation-duration: 8s;
+  height: 100%;
+  width: 100%;
+}
+
+.movie-title {
+  background: #E71D36;
+  border-bottom: 1px solid #FF9F1C;
+  color: #FFFFFF;
+  font-size: 24px;
+}
+
+ @keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
