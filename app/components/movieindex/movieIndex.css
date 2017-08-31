@@ -1,7 +1,13 @@
 .wrapper {
-  background: darkgrey;
+  background: #FDFFFC;
   display: grid;
-  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-columns: 33% 33% 33%;
   grid-gap: 1em;
-  grid-auto-rows: minmax(100px, auto);
+  grid-auto-rows: minmax(300px, auto);
+}
+
+.movie-card {
+  background: #2EC4B6;
+  color: #fff;
+  font-size: 40px;
 }

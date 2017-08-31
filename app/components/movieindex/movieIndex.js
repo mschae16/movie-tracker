@@ -18,11 +18,11 @@ export default class MovieIndex extends Component {
 
 
   const mappedMovieData = this.props.movieData.map(movie => {
-    return <div className="wrapper" key={movie.title}>{movie.title}</div>
+    return <div className="movie-card" key={movie.title}>{movie.title}</div>
   })
 
     return (
-      <div>
+      <div className="wrapper">
       { mappedMovieData }
       </div>
     )
