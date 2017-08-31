@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Redirect } from 'react-router';
 
 class Login extends Component {
   constructor() {
@@ -24,6 +25,13 @@ class Login extends Component {
 
   render() {
     const { handleLoginSubmit } = this.props;
+
+		if (this.props.loginSuccess === 'success') {
+  		return (
+  			<Redirect to="/" />
+  		)
+  	}
+
 
     return (
       <div>
