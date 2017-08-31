@@ -4,7 +4,7 @@ import { Route, NavLink } from 'react-router-dom';
 export default class NavHeader extends Component {
 	render() {
 		return (
-			<div className="navigation-container">
+			<div classNamegit ="navigation-container">
 				<h1>Movie Tracker</h1>
 				<NavLink to="/">Home</NavLink>
 
