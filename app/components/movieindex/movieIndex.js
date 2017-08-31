@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import MovieCard from '../moviecard/movieCard';
+import MovieCard from "../moviecard/movieCard";
 
 export default class MovieIndex extends Component {
   componentDidMount() {
@@ -9,7 +9,13 @@ export default class MovieIndex extends Component {
   }
 
   render() {
-    const { createUserSuccess, hasErred, isLoading, movieData, loginSuccess } = this.props
+    const {
+      createUserSuccess,
+      hasErred,
+      isLoading,
+      movieData,
+      loginSuccess
+    } = this.props;
     if (hasErred) {
       return <p>You fucked up</p>;
     }
@@ -19,7 +25,7 @@ export default class MovieIndex extends Component {
     }
 
     const mappedMovieData = movieData.map(movie => {
-      return <MovieCard key={movie.title} { ...movie } />
+      return <MovieCard key={movie.title} {...movie} />;
     });
 
     return (

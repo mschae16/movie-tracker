@@ -9,12 +9,9 @@ export default class NavHeader extends Component {
     return (
       <div>
         <section className="navigation-wrapper">
-          <div className="slide-right">
-            <header className="movie-tracker-header">MovieTracker</header>
-          </div>
-          <p> Hello NAME </p>
-          <p> Favorites </p>
-          <p>Logout</p>
+					<div className="slide-right">
+          	<header className="movie-tracker-header">MovieTracker</header>
+					</div>
 
           <NavLink activeClassName="selected" className="nav" to="/">
             Home
