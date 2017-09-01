@@ -4,7 +4,8 @@ import { NavLink } from "react-router-dom";
 export default class NavHeader extends Component {
 
   render() {
-    const { loginSuccess, createUserSuccess, handleSignOut } = this.props;
+    const { loginLogoutSuccess, user, handleLogout } = this.props;
+    const logOutObject = { status: '' }
 
     return (
       <div>
@@ -17,13 +18,13 @@ export default class NavHeader extends Component {
             Home
           </NavLink>
 
-          {(loginSuccess !== "success" && createUserSuccess !== 'success') && (
+          {loginLogoutSuccess !== "success" && (
             <NavLink activeClassName="selected" className="nav" to="/login">
               Login
             </NavLink>
           )}
 
-          {(createUserSuccess !== "success" && loginSuccess !== 'success') && (
+          {loginLogoutSuccess !== "success" && (
             <NavLink
               activeClassName="selected"
               className="nav"
@@ -33,8 +34,8 @@ export default class NavHeader extends Component {
             </NavLink>
           )}
 
-          {(createUserSuccess === "success" || loginSuccess === "success") && (
-            <button onClick={ () => handleSignOut() }>Sign Out</button>
+          {loginLogoutSuccess === "success" && (
+            <button onClick={ () => handleLogout(logOutObject) }>Sign Out</button>
           )}
         </section>
       </div>

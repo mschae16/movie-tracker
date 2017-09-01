@@ -1,26 +1,17 @@
 import { connect } from 'react-redux';
 import NavHeader from '../components/navheader/NavHeader';
-import { signOutUser } from '../actions';
-
-// logOutUser,
-// createUserSignOut
+import { loginLogoutSuccess } from '../actions'
 
 const mapStateToProps = store => {
 	return {
-		loginSuccess:
-			store.logOutUser !== ''
-        ? store.loginSuccess
-        : store.logOutUser,
-		createUserSuccess:
-			store.createUserSignOut.status !== ''
-				? store.createUserSuccess.status
-				: store.createUserSignOut
+		loginLogoutSuccess: store.loginLogoutSuccess.status,
+    user: store.loginLogoutSuccess
 	};
 };
 
 const mapDispatchToProps = dispatch => {
 	return {
-		handleSignOut: () => dispatch(signOutUser())
+		handleLogout: (user) => dispatch(loginLogoutSuccess(user))
 	};
 };
 

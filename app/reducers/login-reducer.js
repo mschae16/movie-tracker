@@ -1,7 +1,7 @@
-export const loginSuccess = (state = '', action) => {
+export const loginLogoutSuccess = (state = {status: ''}, action) => {
 	switch (action.type) {
 		case 'LOGIN_SUCCESS': {
-			return action.status
+			return action.user
 		}
 		default:
 			return state;

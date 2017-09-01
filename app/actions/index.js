@@ -6,14 +6,14 @@ export const loginHasErred = bool => {
   }
 }
 
-export const loginSuccess = status => {
+export const loginLogoutSuccess = user => {
   return {
     type: "LOGIN_SUCCESS",
-    status
+    user
   }
 }
 
-export const loginUser = user => {
+export const loginLogoutUser = user => {
   return dispatch => {
     fetch("/api/users", {
       method: "POST",
@@ -29,7 +29,7 @@ export const loginUser = user => {
         return response;
       })
       .then(response => response.json())
-      .then(parsedResponse => dispatch(loginSuccess(parsedResponse.status)));
+      .then(parsedResponse => dispatch(loginLogoutSuccess(Object.assign({}, parsedResponse.data, {password: 'Dont even think about it'}, {status: parsedResponse.status}))));
   };
 };
 
