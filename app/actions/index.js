@@ -24,8 +24,9 @@ export const loginLogoutUser = user => {
       .then(response => {
         if (response.status !== 200) {
           dispatch(loginHasErred(true));
+        } else {
+          return response;
         }
-        return response;
       })
       .then(response => response.json())
       .then(parsedResponse =>
@@ -39,7 +40,8 @@ export const loginLogoutUser = user => {
             )
           )
         )
-      );
+      )
+      .catch(() => dispatch(loginHasErred(true)));
   };
 };
 
@@ -70,7 +72,7 @@ export const fetchData = url => {
 
     fetch(url)
       .then(response => {
-        if (response.status >= 400) {
+        if (response.status !== 200) {
           dispatch(fetchHasErred(true));
         }
 
@@ -103,10 +105,11 @@ export const createUser = newUser => {
       }
     })
       .then(response => {
-        if (response.status >= 400) {
+        if (response.status !== 200) {
           dispatch(createUserErred(true));
+        } else {
+          return response
         }
-        return response
       })
       .then(response => response.json())
       .then(parsedResponse =>
