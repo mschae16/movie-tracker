@@ -18,4 +18,5 @@ body {
   grid-auto-rows: minmax(300px, auto);
   padding: 15px;
   width: 100%;
+  position: relative;
 }
