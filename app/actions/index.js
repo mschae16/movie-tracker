@@ -105,25 +105,10 @@ export const createUser = newUser => {
   };
 };
 
-export const logOutUser = (loginSuccess) => {
+export const signOutUser = () => {
   return {
     type: "LOG_OUT_USER",
-    loginSuccess
-  }
-}
-
-export const createUserSignOut = (createUserSuccess) => {
-  return {
-    type: "CREATE_USER_SIGNOUT",
-    createUserSuccess
-  }
-}
-
-export const signOutUser = (loginSuccess, createUserSuccess) => {
-  return dispatch => {
-    loginSuccess = '';
-    createUserSuccess = {};
-    dispatch(createUserSignOut(createUserSuccess));
-    dispatch(logOutUser(loginSuccess));
+    loginSuccess: '',
+    createUserSuccess: {status: ''}
   }
 }
