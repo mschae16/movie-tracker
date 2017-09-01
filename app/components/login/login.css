@@ -1,38 +1,55 @@
-.login-form {
-  background: #E6E8E5;
+form {
+  background: #FFFFFF;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  width: 40%;
+  height: 70%;
+  margin-top: 30px;
+}
+
+.form-wrapper {
+  background: #E6E8E5;
+  display: flex;
+  justify-content: center;
   width: 100%;
   height: 100vh;
 }
 
-.login-input {
+input {
   height: 30px;
-  width: 40%;
+  width: 50%;
   margin-bottom: 10px;
 }
 
-.login-message {
+form h4 {
   color: #2EC4B6;
   margin: 25px 0;
 }
 
-.create-user:hover {
+form h2 {
+  color: #2EC4B6;
+}
+
+.form-prompt {
+  text-decoration: underline;
+}
+
+.form-prompt:hover {
   color: #1C2328;
   cursor: pointer;
 }
 
-.login {
+.form-button {
   background: #E71D36;
   border: none;
   font-size: 20px;
   color: #FDFFFC;
-  width: 40%;
+  width: 50%;
 }
 
-.login:hover {
+.form-button:hover {
   background: #2F3942;
   cursor: pointer;
 }
