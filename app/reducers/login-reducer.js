@@ -13,7 +13,9 @@ export const loginHasErred = (state = false, action) => {
 		case 'LOGIN_HAS_ERRED': {
 			return action.loginErred
 		}
-
+		case 'LOGIN_SUCCESS': {
+			return false
+		}
 		default:
 			return state
 	}

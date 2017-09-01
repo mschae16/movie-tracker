@@ -17,7 +17,6 @@ class CreateUser extends Component {
       email: this.state.email.toLowerCase(),
       password: this.state.password
     };
-    console.log(this.props);
     this.props.createUser(user);
 
     this.setState({
@@ -28,8 +27,8 @@ class CreateUser extends Component {
   }
 
   render() {
-    const { status } = this.props.createUserSuccess
-    if (status === 'success') {
+    const { loginLogoutSuccess } = this.props
+    if (loginLogoutSuccess === 'success') {
       return (
         <Redirect to='/' />
       )

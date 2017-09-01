@@ -4,8 +4,8 @@ import CreateUser from '../components/createuser/createuser';
 
 const mapStateToProps = store => {
 	return {
-		createdUserId: store.newUser,
-		createUserSuccess: store.createUserSuccess
+		loginLogoutSuccess: store.loginLogoutSuccess.status,
+		createUserErred: store.createUserErred
 	};
 };
 
