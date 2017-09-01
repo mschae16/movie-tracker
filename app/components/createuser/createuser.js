@@ -35,13 +35,15 @@ class CreateUser extends Component {
       )
     }
     return (
-      <div>
+      <div className="form-wrapper">
         <form
           onSubmit={e => {
             e.preventDefault();
             this.captureUserData();
           }}
         >
+          <h2>Sign-Up for MovieTracker</h2>
+
           <input
             type="text"
             placeholder="Name"
@@ -60,7 +62,8 @@ class CreateUser extends Component {
             value={this.state.password}
             onChange={e => this.setState({ password: e.target.value })}
           />
-          <input type="submit" value="Create User" />
+          <input className="form-button" type="submit" value="Create User" />
+          <h4>Already have a login? <span className="form-prompt">Login here.</span></h4>
         </form>
       </div>
     );
