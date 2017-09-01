@@ -13,9 +13,9 @@ class Login extends Component {
   constructUserObject() {
     const user = {
       email: this.state.email.toLowerCase(),
-      password: this.state.password.toLowerCase()
+      password: this.state.password
     };
-    this.props.handleLoginSubmit(user);
+    this.props.handleLogin(user);
 
     this.setState({
       email: "",
@@ -24,9 +24,8 @@ class Login extends Component {
   }
 
   render() {
-    const { handleLoginSubmit } = this.props;
 
-    if (this.props.loginSuccess === "success") {
+    if (this.props.loginLogoutSuccess === "success") {
       return <Redirect to="/" />;
     }
 
