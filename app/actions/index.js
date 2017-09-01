@@ -1,17 +1,16 @@
-
 export const loginHasErred = bool => {
   return {
     type: "LOGIN_HAS_ERRED",
     loginErred: bool
-  }
-}
+  };
+};
 
 export const loginLogoutSuccess = user => {
   return {
     type: "LOGIN_SUCCESS",
     user
-  }
-}
+  };
+};
 
 export const loginLogoutUser = user => {
   return dispatch => {
@@ -29,7 +28,18 @@ export const loginLogoutUser = user => {
         return response;
       })
       .then(response => response.json())
-      .then(parsedResponse => dispatch(loginLogoutSuccess(Object.assign({}, parsedResponse.data, {password: 'Dont even think about it'}, {status: parsedResponse.status}))));
+      .then(parsedResponse =>
+        dispatch(
+          loginLogoutSuccess(
+            Object.assign(
+              {},
+              parsedResponse.data,
+              { password: "Dont even think about it" },
+              { status: parsedResponse.status }
+            )
+          )
+        )
+      );
   };
 };
 
@@ -83,15 +93,6 @@ export const createUserErred = bool => {
   };
 };
 
-export const createUserSuccess = newUser => {
-  return {
-    type: "CREATE_USER_SUCCESS",
-    newUser
-  };
-};
-
-//just to add a commit
-
 export const createUser = newUser => {
   return dispatch => {
     fetch("/api/users/new", {
@@ -101,16 +102,27 @@ export const createUser = newUser => {
         "Content-Type": "application/json"
       }
     })
+      .then(response => {
+        if (response.status >= 400) {
+          dispatch(createUserErred(true));
+        }
+        return response
+      })
       .then(response => response.json())
-      .then(parsedResponse => dispatch(createUserSuccess(parsedResponse)))
+      .then(parsedResponse =>
+        dispatch(
+          loginLogoutSuccess(
+            Object.assign(
+              {},
+              { name: newUser.name,
+                email: newUser.email },
+              { password: "Dont even think about it" },
+              { status: parsedResponse.status,
+                id: parsedResponse.id }
+            )
+          )
+        )
+      )
       .catch(() => dispatch(createUserErred(true)));
   };
 };
-
-export const signOutUser = () => {
-  return {
-    type: "LOG_OUT_USER",
-    loginSuccess: '',
-    createUserSuccess: {status: ''}
-  }
-}

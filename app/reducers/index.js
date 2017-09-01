@@ -12,10 +12,7 @@ const rootReducer = combineReducers({
   fetchIsLoading,
   fetchDataSuccess,
   routing: routerReducer,
-  createUserSuccess,
-  createUserErred,
-  logOutUser,
-  createUserSignOut
+  createUserErred
 });
 
 export default rootReducer;
