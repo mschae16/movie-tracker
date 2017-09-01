@@ -1,4 +1,4 @@
-export const createUserErred = (state = {}, action) => {
+export const createUserErred = (state = false, action) => {
   switch (action.type) {
     case 'CREATE_USER_ERRED': {
       return action.createUserErred
