@@ -21,7 +21,18 @@ export const fetchIsLoading = (state = false, action) => {
 export const fetchDataSuccess = (state = [], action) => {
   switch (action.type) {
     case "FETCH_DATA_SUCCESS":
-      return action.data;
+      return action.data.map( movie => {
+        return Object.assign({}, movie, { isFaved: false })
+      });
+
+    case "ADD_TO_FAVES_SUCCESS":
+    debugger
+      return state.map( movie => {
+        if ( action.movie.title === movie.title ) {
+          return Object.assign({}, movie, action.movie, { isFaved: true })
+        }
+        return movie
+      })
 
     default:
       return state;

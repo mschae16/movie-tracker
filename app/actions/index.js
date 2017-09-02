@@ -129,3 +129,41 @@ export const createUser = newUser => {
       .catch(() => dispatch(createUserErred(true)));
   };
 };
+
+export const addToFavesSuccess = (movie) => {
+  return {
+    type: "ADD_TO_FAVES_SUCCESS",
+    movie
+  }
+}
+
+export const addToFavesErred = (bool) => {
+  return {
+    type: "ADD_TO_FAVES_ERRED",
+    addToFavesErred: bool
+  }
+}
+
+export const addToFaves = (movie) => {
+  return dispatch => {
+    fetch("api/users/favorites/new", {
+      method: "POST",
+      body: JSON.stringify(movie),
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+    .then(response => {
+      if (response.status !== 200) {
+        dispatch(addToFavesErred(true));
+      } else {
+        return response
+      }
+    })
+    .then(() => dispatch(addToFavesSuccess(movie)))
+    // .catch(() => {
+    //   console.log('second error');
+    //   dispatch(addToFavesErred(true))
+    // })
+  }
+}

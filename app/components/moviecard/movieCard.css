@@ -4,6 +4,10 @@
   overflow: hidden;
 }
 
+.favorited {
+  border: 5px solid chartreuse;
+}
+
 .movie-card:hover {
   cursor: pointer;
   opacity: 0.5;

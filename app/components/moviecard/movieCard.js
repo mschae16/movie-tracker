@@ -2,13 +2,18 @@ import React from "react";
 
 const MovieCard = ({
   title,
+  id: movie_id,
   overview,
   backdrop_path,
   poster_path,
   release_date,
+  vote_average,
+  isFaved,
   addToFaves
 }) => {
   let backDrop;
+
+  const favorited = isFaved ? 'favorited' : ''
 
   if (poster_path) {
     backDrop = `https://image.tmdb.org/t/p/w500${poster_path}`;
@@ -17,14 +22,14 @@ const MovieCard = ({
   const movie = {
     title,
     overview,
-    backdrop_path,
+    movie_id,
     poster_path,
     release_date,
-    isFaved: true
+    vote_average
   }
 
   return (
-    <div className="movie-card">
+    <div className={`movie-card ${favorited}`}>
       <h5 className="movie-title">{title}</h5>
       <button onClick={() => addToFaves(movie)}>Favorite Me</button>
       <img className="movie-image" src={backDrop} alt="backdrop image" />
