@@ -16,15 +16,18 @@ export default class MovieIndex extends Component {
 	}
 
   addToFaves(movie) {
-    const { loginLogoutSuccess } = this.props
+    const { loginLogoutSuccess, user, addToFaves } = this.props
+    console.log('user', user);
 
     if (loginLogoutSuccess === '' && movie) {
       this.setState({
         redirect: true
       })
+    } else {
+      movie.user_id = user.id
+      console.log('movie', movie);
+      addToFaves(movie)
     }
-
-    return true
   }
 
 	render() {
