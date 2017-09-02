@@ -25,7 +25,8 @@ const MovieCard = ({
     movie_id,
     poster_path,
     release_date,
-    vote_average
+    vote_average, 
+    isFaved
   }
 
   return (
