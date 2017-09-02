@@ -161,9 +161,45 @@ export const addToFaves = (movie) => {
       }
     })
     .then(() => dispatch(addToFavesSuccess(movie)))
-    // .catch(() => {
-    //   console.log('second error');
-    //   dispatch(addToFavesErred(true))
-    // })
+    .catch(() => {
+      dispatch(addToFavesErred(true))
+    })
+  }
+}
+
+export const removeFavesSuccess = (movie) => {
+  return {
+    type: 'REMOVE_FAVES_SUCCESS',
+    movie
+  }
+}
+
+export const removeFavesErred = (bool) => {
+  return {
+    type: 'REMOVE_FAVES_ERRED',
+    removeFavesErred: bool
+  }
+}
+
+export const removeFromFaves = (movie) => {
+  return dispatch => {
+    fetch(`api/users/${movie.user_id}/favorites/${movie.movie_id}`, {
+      method: "DELETE",
+      body: JSON.stringify(movie),
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+    .then(response => {
+      if (response.status !== 200) {
+        dispatch(removeFavesErred(true));
+      } else {
+        return response
+      }
+    })
+    .then(() => dispatch(removeFavesSuccess(movie)))
+    .catch(() => {
+      dispatch(removeFavesErred(true))
+    })
   }
 }

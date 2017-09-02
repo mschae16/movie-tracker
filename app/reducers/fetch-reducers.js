@@ -26,7 +26,6 @@ export const fetchDataSuccess = (state = [], action) => {
       });
 
     case "ADD_TO_FAVES_SUCCESS":
-    debugger
       return state.map( movie => {
         if ( action.movie.title === movie.title ) {
           return Object.assign({}, movie, action.movie, { isFaved: true })
@@ -34,6 +33,14 @@ export const fetchDataSuccess = (state = [], action) => {
         return movie
       })
 
+    case "REMOVE_FAVES_SUCCESS":
+      return state.map( movie => {
+        if (action.movie.title === movie.title) {
+          return Object.assign({}, movie, action.movie, { isFaved: false })
+        }
+        return movie
+      })
+      
     default:
       return state;
   }

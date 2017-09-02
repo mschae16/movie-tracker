@@ -4,7 +4,8 @@ import { fetchHasErred, fetchIsLoading, fetchDataSuccess } from './fetch-reducer
 import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
 import { createUserErred, createUserSuccess } from './create-user-reducer'
 import { logOutUser, createUserSignOut } from './sign-out-reducer'
-import { addToFavesSuccess, addToFavesErred } from './add-faves-reducer'
+import { addToFavesErred } from './add-faves-reducer'
+import { removeFavesErred } from './remove-faves-reducer'
 
 const rootReducer = combineReducers({
   loginLogoutSuccess,
