@@ -9,7 +9,7 @@ const MovieCard = ({
   release_date,
   vote_average,
   isFaved,
-  addToFaves
+  handleFavorites
 }) => {
   let backDrop;
 
@@ -25,14 +25,14 @@ const MovieCard = ({
     movie_id,
     poster_path,
     release_date,
-    vote_average, 
+    vote_average,
     isFaved
   }
 
   return (
     <div className={`movie-card ${favorited}`}>
       <h5 className="movie-title">{title}</h5>
-      <button onClick={() => addToFaves(movie)}>Favorite Me</button>
+      <button onClick={() => handleFavorites(movie)}>Favorite Me</button>
       <img className="movie-image" src={backDrop} alt="backdrop image" />
     </div>
   );
