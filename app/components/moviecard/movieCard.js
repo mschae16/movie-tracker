@@ -16,6 +16,7 @@ const MovieCard = ({
   return (
     <div className="movie-card">
       <h5 className="movie-title">{title}</h5>
+      <button>Favorite Me</button>
       <img className="movie-image" src={backDrop} alt="backdrop image" />
     </div>
   );
