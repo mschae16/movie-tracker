@@ -37,11 +37,10 @@ export default class NavHeader extends Component {
 						<button onClick={() => handleLogout(logOutObject)}>Sign Out</button>
 					)}
 
-					{loginLogoutSuccess === 'success' && (
 						<NavLink activeClassName="selected" className="nav" to="/favorites">
 							Favorites
 						</NavLink>
-					)}
+            
 				</section>
 			</div>
 		);

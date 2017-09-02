@@ -7,8 +7,7 @@ const mapStateToProps = store => {
     movieData: store.fetchDataSuccess,
     hasErred: store.hasErred,
     isLoading: store.isLoading,
-    loginSuccess: store.loginSuccess,
-    createUserSuccess: store.createUserSuccess
+    loginLogoutSuccess: store.loginLogoutSuccess.status
   };
 };
 
