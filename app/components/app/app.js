@@ -3,7 +3,7 @@ import LoginContainer from "../../containers/loginContainer";
 import MovieIndex from "../movieindex/movieIndex";
 import CreateUserContainer from "../../containers/createUserContainer";
 import NavHeaderContainer from "../../containers/navHeaderContainer";
-import Favorites from '../favorites/Favorites';
+import Favorites from "../favorites/Favorites";
 import { Route } from "react-router";
 
 const App = () => {
@@ -34,13 +34,7 @@ const App = () => {
           );
         }}
       />
-    <Route exact path="/favorites" render={() => {
-        return (
-          <div>
-            <Favorites />
-          </div>
-        )
-      }} />
+      <Route exact path="/favorites" component={Favorites} />
       <Route exact path="/" component={MovieIndex} />
     </div>
   );
