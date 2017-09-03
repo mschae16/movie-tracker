@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import movieIndexContainer from '../../containers/movieIndexContainer';
 import MovieCard from '../moviecard/movieCard';
 import { Redirect } from 'react-router'
 
-export default class MovieIndex extends Component {
+export class MovieIndex extends Component {
   constructor() {
     super()
     this.state = {
@@ -15,9 +16,9 @@ export default class MovieIndex extends Component {
 		);
 	}
 
-  addToFaves(movie) {
+  handleFavorites(movie) {
     const { loginLogoutSuccess, user, addToFaves, removeFromFaves } = this.props
-    
+
     movie.user_id = user.id
 
     if (loginLogoutSuccess === '' && movie) {
@@ -55,7 +56,7 @@ export default class MovieIndex extends Component {
 				<MovieCard
 					key={movie.title}
 					{...movie}
-					addToFaves={this.addToFaves.bind(this)}
+					handleFavorites={this.handleFavorites.bind(this)}
 				/>
 			);
 		});
@@ -67,3 +68,5 @@ export default class MovieIndex extends Component {
 		);
 	}
 }
+
+export default movieIndexContainer(MovieIndex);

@@ -1,8 +1,9 @@
 import React from "react";
 import LoginContainer from "../../containers/loginContainer";
-import MovieIndexContainer from "../../containers/movieIndexContainer";
+import MovieIndex from "../movieindex/movieIndex";
 import CreateUserContainer from "../../containers/createUserContainer";
 import NavHeaderContainer from "../../containers/navHeaderContainer";
+import Favorites from "../favorites/Favorites";
 import { Route } from "react-router";
 
 const App = () => {
@@ -16,7 +17,7 @@ const App = () => {
           return (
             <div>
               <CreateUserContainer />
-              <MovieIndexContainer />
+              <MovieIndex />
             </div>
           );
         }}
@@ -28,12 +29,13 @@ const App = () => {
           return (
             <div>
               <LoginContainer />
-              <MovieIndexContainer />
+              <MovieIndex />
             </div>
           );
         }}
       />
-      <Route exact path="/" component={MovieIndexContainer} />
+      <Route exact path="/favorites" component={Favorites} />
+      <Route exact path="/" component={MovieIndex} />
     </div>
   );
 };

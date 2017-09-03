@@ -20,4 +20,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(movieIndex);
+export default connect(mapStateToProps, mapDispatchToProps);
