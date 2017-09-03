@@ -6,10 +6,15 @@ class CreateUser extends Component {
 	constructor() {
 		super();
 		this.state = {
+			user: {},
 			name: '',
 			email: '',
 			password: ''
 		};
+	}
+
+	sendToStorage(user) {
+		localStorage.setItem('user', JSON.stringify(user));
 	}
 
 	captureUserData() {
@@ -18,18 +23,16 @@ class CreateUser extends Component {
 			email: this.state.email.toLowerCase(),
 			password: this.state.password
 		};
+
 		this.props.createUser(user);
 
-		const { createUserErred } = this.props
-		if (!createUserErred) {
-			localStorage.setItem('user', JSON.stringify(Object.assign({}, { email: user.email, password: user.password })));
-		}
-
-		this.setState({
-			name: '',
-			email: '',
-			password: ''
-		});
+		this.setState({ user: Object.assign({}, { email: user.email, password: user.password }) }, () => {
+			this.setState({
+				name: '',
+				email: '',
+				password: ''
+			});
+		})
 	}
 
 	render() {
@@ -37,13 +40,16 @@ class CreateUser extends Component {
 		const { name, email, password } = this.state;
 		const isDisabled =
 			name === '' ? true : email === '' ? true : password === '' ? true : false;
+		const finalUser = this.state.user
 		let errorMessage
+
 
 		if (createUserErred) {
 			errorMessage = <h4 className="error-message">Email has already been used</h4>
 		}
 
 		if (loginLogoutSuccess === 'success') {
+			this.sendToStorage(finalUser)
 			return <Redirect to="/" />;
 		}
 
