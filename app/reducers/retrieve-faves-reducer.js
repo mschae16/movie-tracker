@@ -8,6 +8,9 @@ export const retrieveFavesSuccess = (state = [], action) => {
 		case 'REMOVE_FAVES_SUCCESS':
 			return state.filter(movie => movie.title !== action.movie.title)
 
+    case 'RESET_FAVORITES':
+      return action.emptyFavoritesArray
+
 		default:
 			return state;
 	}

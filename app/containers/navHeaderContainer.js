@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import NavHeader from '../components/navheader/NavHeader';
-import { loginLogoutSuccess } from '../actions'
+import { loginLogoutSuccess, resetFavorites } from '../actions'
 
 const mapStateToProps = store => {
 	return {
@@ -11,7 +11,8 @@ const mapStateToProps = store => {
 
 const mapDispatchToProps = dispatch => {
 	return {
-		handleLogout: (user) => dispatch(loginLogoutSuccess(user))
+		handleLogout: (user) => dispatch(loginLogoutSuccess(user)),
+		resetFavorites: (array) => dispatch(resetFavorites(array))
 	};
 };
 
