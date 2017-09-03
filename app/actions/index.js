@@ -189,12 +189,13 @@ export const removeFromFaves = movie => {
   return dispatch => {
     fetch(`api/users/${movie.user_id}/favorites/${movie.movie_id}`, {
       method: "DELETE",
-      body: JSON.stringify(movie),
+      body: JSON.stringify([movie.user_id, movie.movie_id]),
       headers: {
         "Content-Type": "application/json"
       }
     })
       .then(response => {
+        debugger
         if (response.status !== 200) {
           dispatch(removeFavesErred(true));
         } else {

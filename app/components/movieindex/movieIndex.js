@@ -30,7 +30,9 @@ export class MovieIndex extends Component {
 			removeFromFaves
 		} = this.props;
 
+
 		movie.user_id = user.id;
+    console.log('user', user);
 
 		if (loginLogoutSuccess === '' && movie) {
 			this.setState({
