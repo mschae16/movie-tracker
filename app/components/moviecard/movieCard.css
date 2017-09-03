@@ -36,6 +36,12 @@
   }
 }
 
+.info-hover {
+  display: none;
+  position: absolute;
+  color: chartreuse;
+}
+
 /*.favorite-button {
   background: white;
   opacity: 0.7;

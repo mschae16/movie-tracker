@@ -25,12 +25,26 @@ const MovieCard = ({
     movie_id,
     poster_path,
     release_date,
-    vote_average, 
+    vote_average,
     isFaved
   }
 
   return (
     <div className={`movie-card ${favorited}`}>
+      <div className="info-hover">
+        <p className="overview">
+          <span className="hover-section-title">Synopsis: </span>
+          {overview}
+        </p>
+        <p className="additional-info">
+          <span className="hover-section-title">Release Date:</span>
+          {release_date}
+        </p>
+        <p className="additional-info">
+          <span className="hover-section-title">Vote Average: </span>
+          {vote_average} / 10
+        </p>
+      </div>
       <h5 className="movie-title">{title}</h5>
       <button onClick={() => addToFaves(movie)}>Favorite Me</button>
       <img className="movie-image" src={backDrop} alt="backdrop image" />
