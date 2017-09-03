@@ -11,14 +11,11 @@ const MovieCard = ({
   isFaved,
   handleFavorites
 }) => {
-  let backDrop;
 
   const favorited = isFaved ? 'favorited' : ''
   const btnText = isFaved ? 'Remove' : 'Add'
 
-  if (poster_path) {
-    backDrop = `https://image.tmdb.org/t/p/w500${poster_path}`;
-  }
+  let backDrop = `https://image.tmdb.org/t/p/w500${poster_path}`
 
   const movie = {
     title,
@@ -40,5 +37,3 @@ const MovieCard = ({
 };
 
 export default MovieCard;
-
-// <button className="favorite-button">Fav</button>

@@ -51,15 +51,12 @@ export class MovieIndex extends Component {
       return <Redirect to="/login" />
     }
 
-		const mappedMovieData = movieData.map(movie => {
-			return (
+		const mappedMovieData = movieData.map( movie => 
 				<MovieCard
 					key={movie.title}
 					{...movie}
 					handleFavorites={this.handleFavorites.bind(this)}
-				/>
-			);
-		});
+				/> );
 
 		return (
 			<div>

@@ -1,7 +1,10 @@
 export const fetchHasErred = (state = false, action) => {
   switch (action.type) {
     case "FETCH_HAS_ERRED":
-      return action.hasErred;
+      return action.hasErred
+
+    case "RETRIEVE_FAVES_SUCCESS":
+      return false
 
     default:
       return state;
@@ -40,7 +43,7 @@ export const fetchDataSuccess = (state = [], action) => {
         }
         return movie
       })
-      
+
     default:
       return state;
   }
