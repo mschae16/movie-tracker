@@ -1,4 +1,4 @@
-* {
+ * {
   box-sizing: border-box;
   margin: 0px;
 }
@@ -19,4 +19,22 @@ body {
   padding: 15px;
   width: 100%;
   position: relative;
+}
+
+@media screen and (max-width: 1024px) {
+  .wrapper {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+  }
 }
