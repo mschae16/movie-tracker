@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import movieIndex from "../components/movieindex/movieIndex";
-import { fetchData, addToFaves, removeFromFaves, retrieveAllFaves } from "../actions";
+import { fetchData, addToFaves, removeFromFaves, retrieveAllFaves, loginLogoutUser } from "../actions";
 
 const mapStateToProps = store => {
   return {
@@ -16,6 +16,7 @@ const mapStateToProps = store => {
 const mapDispatchToProps = dispatch => {
   return {
     fetchData: url => dispatch(fetchData(url)),
+    loginLogoutUser: user => dispatch(loginLogoutUser(user)),
     addToFaves: movie => dispatch(addToFaves(movie)),
     removeFromFaves: movie => dispatch(removeFromFaves(movie)),
     retrieveFavorites: userId => dispatch(retrieveAllFaves(userId))

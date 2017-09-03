@@ -10,15 +10,32 @@ export class MovieIndex extends Component {
 			redirect: false
 		};
 	}
-	componentDidMount() {
-		const { loginLogoutSuccess, user, retrieveFavorites } = this.props;
 
+	retrieveFromStorage() {
+		return JSON.parse(localStorage.getItem('user'))
+	}
+	componentDidMount() {
 		this.props.fetchData(
 			`https://api.themoviedb.org/3/movie/now_playing?api_key=7a09ea0565fc41e80aedf1cf7fdbdd9c&language=en-US`
 		);
 
+		const userObj = this.retrieveFromStorage()
+		if (userObj) {
+			this.props.loginLogoutUser(userObj)
+		}
+
+		const { loginLogoutSuccess, user, retrieveFavorites } = this.props;
+
 		if (loginLogoutSuccess === 'success') {
 			retrieveFavorites(user.id);
+		}
+	}
+
+	componentWillReceiveProps(nextProps) {
+		const { user, retrieveFavorites } = nextProps;
+
+		if (this.props.loginLogoutSuccess !== nextProps.loginLogoutSuccess && nextProps.user.status === 'success') {
+			retrieveFavorites(user.id)
 		}
 	}
 
@@ -63,7 +80,16 @@ export class MovieIndex extends Component {
 	}
 
 	render() {
-		const { hasErred, isLoading, movieData, loginLogoutSuccess } = this.props;
+
+		const { loginLogoutSuccess, user, retrieveFavorites } = this.props;
+
+		// if (loginLogoutSuccess === 'success') {
+		// 	console.log('logged in!');
+		// 	retrieveFavorites(user.id);
+		// }
+
+		const { hasErred, isLoading, movieData } = this.props;
+
 		if (hasErred) {
 			return <p>You fucked up</p>;
 		}

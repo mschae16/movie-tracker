@@ -6,28 +6,37 @@ class Login extends Component {
 	constructor() {
 		super();
 		this.state = {
+			user: {},
 			email: '',
 			password: ''
 		};
 	}
 
+	sendToStorage(user) {
+		localStorage.setItem('user', JSON.stringify(user));
+	}
+
 	constructUserObject() {
-		const user = {
+		const newUser = {
 			email: this.state.email.toLowerCase(),
 			password: this.state.password
 		};
-		this.props.handleLogin(user);
 
-		this.setState({
-			email: '',
-			password: ''
-		});
+		this.setState({ user: newUser }, () => {
+			this.setState({
+					email: '',
+					password: ''
+				});
+		})
+
+		this.props.handleLogin(newUser);
 	}
 
 	render() {
 		const { name, email, password } = this.state;
 		const { loginHasErred } = this.props
 		const isDisabled = email === '' ? true : password === '' ? true : false;
+		const finalUser = this.state.user
 		let errorMessage
 
 		if (loginHasErred) {
@@ -35,6 +44,7 @@ class Login extends Component {
 		}
 
 		if (this.props.loginLogoutSuccess === 'success') {
+			this.sendToStorage(finalUser)
 			return <Redirect to="/" />;
 		}
 
