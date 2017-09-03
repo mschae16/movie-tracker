@@ -11,7 +11,7 @@ export class Favorites extends Component {
 	componentDidMount() {
     const { loginLogoutSuccess, user, retrieveFavorites } = this.props
     console.log('user info', user);
-    
+
     if (loginLogoutSuccess === 'success') {
       retrieveFavorites(user.id)
     }

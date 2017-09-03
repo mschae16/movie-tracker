@@ -219,7 +219,7 @@ export const retrieveAllFaves = userId => {
   return dispatch => {
     dispatch(fetchIsLoading(true));
 
-    fetch(`/users/${userId}/favorites`)
+    fetch(`api/users/${userId}/favorites`)
       .then(response => {
         if (response.status !== 200) {
           dispatch(fetchHasErred(true));
