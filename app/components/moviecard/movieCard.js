@@ -12,8 +12,10 @@ const MovieCard = ({
   handleFavorites
 }) => {
 
+
   const favorited = isFaved ? 'favorited' : ''
   const btnText = isFaved ? 'Remove' : 'Add'
+  console.log('btn Text', btnText)
 
   let backDrop = `https://image.tmdb.org/t/p/w500${poster_path}`
 
