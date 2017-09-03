@@ -35,7 +35,7 @@ const App = () => {
         }}
       />
       <Route exact path="/favorites" component={Favorites} />
-      <Route exact path="/" component={MovieIndex} />
+      <Route exact path="/" render={ () => <MovieIndex /> } />
     </div>
   );
 };

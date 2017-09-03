@@ -2,9 +2,17 @@ import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 
 export default class NavHeader extends Component {
+
+	logoutReRender() {
+		const { handleLogout, resetFavorites } = this.props
+		const logOutObject = { status: '' };
+
+		handleLogout(logOutObject)
+		resetFavorites([])
+	}
+
 	render() {
 		const { loginLogoutSuccess, user, handleLogout } = this.props;
-		const logOutObject = { status: '' };
 
 		return (
 			<div>
@@ -34,13 +42,13 @@ export default class NavHeader extends Component {
 					)}
 
 					{loginLogoutSuccess === 'success' && (
-						<button onClick={() => handleLogout(logOutObject)}>Sign Out</button>
+						<button onClick={() => this.logoutReRender()}>Sign Out</button>
 					)}
 
 						<NavLink activeClassName="selected" className="nav" to="/favorites">
 							Favorites
 						</NavLink>
-            
+
 				</section>
 			</div>
 		);

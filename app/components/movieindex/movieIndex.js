@@ -32,7 +32,6 @@ export class MovieIndex extends Component {
 
 
 		movie.user_id = user.id;
-    console.log('user', user);
 
 		if (loginLogoutSuccess === '' && movie) {
 			this.setState({
@@ -46,7 +45,8 @@ export class MovieIndex extends Component {
 	}
 
 	handleMovieDisplay() {
-		const { favoritesData, movieData } = this.props;
+		const { favoritesData, movieData, loginLogoutSuccess } = this.props;
+
 
 		if (favoritesData.length > 0) {
 			const favoritesID = favoritesData.map(favorite => favorite.movie_id);
