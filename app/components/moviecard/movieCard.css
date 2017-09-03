@@ -2,16 +2,16 @@
   position: relative;
   background: #000;
   box-shadow: 7px 4px 4px #1c2328;
+  border-radius: 12px;
   overflow: hidden;
 }
 
 .favorited {
-  border: 5px solid chartreuse;
+  border: 3px solid chartreuse;
 }
 
 .movie-card:hover {
   cursor: pointer;
-  transition: all 0.5s ease-in;
 }
 
 .info-hover {
@@ -26,6 +26,7 @@
 .info-hover:hover {
   background-color: rgba(0, 0, 0, 0.8);
   color: #fff;
+  transition: all 0.5s ease-in;
 }
 
 .text {
