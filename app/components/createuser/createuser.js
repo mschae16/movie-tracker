@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router';
+import { Link } from 'react-router-dom';
 
 class CreateUser extends Component {
 	constructor() {
@@ -27,10 +28,15 @@ class CreateUser extends Component {
 	}
 
 	render() {
-		const { loginLogoutSuccess } = this.props;
+		const { loginLogoutSuccess, createUserErred } = this.props;
 		const { name, email, password } = this.state;
 		const isDisabled =
 			name === '' ? true : email === '' ? true : password === '' ? true : false;
+		let errorMessage
+
+		if (createUserErred) {
+			errorMessage = <h4 className="error-message">Email has already been used</h4>
+		}
 
 		if (loginLogoutSuccess === 'success') {
 			return <Redirect to="/" />;
@@ -45,6 +51,8 @@ class CreateUser extends Component {
 					}}
 				>
 					<h2>Sign-Up for MovieTracker</h2>
+
+					{errorMessage}
 
 					<input
 						type="text"
@@ -72,7 +80,9 @@ class CreateUser extends Component {
 					/>
 					<h4>
 						Already have a login?{' '}
-						<span className="form-prompt">Login here.</span>
+						<span className="form-prompt">
+							<Link to="/login">Login Here.</Link>
+						</span>
 					</h4>
 				</form>
 			</div>

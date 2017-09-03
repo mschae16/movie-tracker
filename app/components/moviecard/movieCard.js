@@ -14,6 +14,7 @@ const MovieCard = ({
   let backDrop;
 
   const favorited = isFaved ? 'favorited' : ''
+  const btnText = isFaved ? 'Remove' : 'Add'
 
   if (poster_path) {
     backDrop = `https://image.tmdb.org/t/p/w500${poster_path}`;
@@ -25,14 +26,14 @@ const MovieCard = ({
     movie_id,
     poster_path,
     release_date,
-    vote_average, 
+    vote_average,
     isFaved
   }
 
   return (
     <div className={`movie-card ${favorited}`}>
       <h5 className="movie-title">{title}</h5>
-      <button onClick={() => addToFaves(movie)}>Favorite Me</button>
+      <button onClick={() => addToFaves(movie)}>{btnText}</button>
       <img className="movie-image" src={backDrop} alt="backdrop image" />
     </div>
   );

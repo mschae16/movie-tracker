@@ -71,3 +71,7 @@ form h2 {
   background: #2F3942;
   cursor: not-allowed;
 }
+
+.error-message {
+  color: #E71D36;
+}
