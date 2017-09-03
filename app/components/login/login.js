@@ -24,6 +24,9 @@ class Login extends Component {
   }
 
   render() {
+    const { name, email, password } = this.state
+
+    const isDisabled = email === '' ? true : password === '' ? true : false
 
     if (this.props.loginLogoutSuccess === "success") {
       return <Redirect to="/" />;
@@ -50,7 +53,7 @@ class Login extends Component {
             value={this.state.password}
             onChange={e => this.setState({ password: e.target.value })}
           />
-          <input className="form-button" type="submit" value="Login" />
+        <input className="form-button" type="submit" value="Login" disabled={isDisabled}/>
           <h4>Dont have a login? <span className="form-prompt">Create user.</span></h4>
         </form>
       </div>
