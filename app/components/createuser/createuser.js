@@ -20,6 +20,11 @@ class CreateUser extends Component {
 		};
 		this.props.createUser(user);
 
+		const { createUserErred } = this.props
+		if (!createUserErred) {
+			localStorage.setItem('user', JSON.stringify(Object.assign({}, { email: user.email, password: user.password })));
+		}
+
 		this.setState({
 			name: '',
 			email: '',
