@@ -108,7 +108,7 @@ export const createUser = newUser => {
         if (response.status !== 200) {
           dispatch(createUserErred(true));
         } else {
-          return response
+          return response;
         }
       })
       .then(response => response.json())
@@ -117,11 +117,15 @@ export const createUser = newUser => {
           loginLogoutSuccess(
             Object.assign(
               {},
-              { name: newUser.name,
-                email: newUser.email },
+              {
+                name: newUser.name,
+                email: newUser.email
+              },
               { password: "Dont even think about it" },
-              { status: parsedResponse.status,
-                id: parsedResponse.id }
+              {
+                status: parsedResponse.status,
+                id: parsedResponse.id
+              }
             )
           )
         )
@@ -130,21 +134,21 @@ export const createUser = newUser => {
   };
 };
 
-export const addToFavesSuccess = (movie) => {
+export const addToFavesSuccess = movie => {
   return {
     type: "ADD_TO_FAVES_SUCCESS",
     movie
-  }
-}
+  };
+};
 
-export const addToFavesErred = (bool) => {
+export const addToFavesErred = bool => {
   return {
     type: "ADD_TO_FAVES_ERRED",
     addToFavesErred: bool
-  }
-}
+  };
+};
 
-export const addToFaves = (movie) => {
+export const addToFaves = movie => {
   return dispatch => {
     fetch("api/users/favorites/new", {
       method: "POST",
@@ -153,35 +157,35 @@ export const addToFaves = (movie) => {
         "Content-Type": "application/json"
       }
     })
-    .then(response => {
-      if (response.status !== 200) {
+      .then(response => {
+        if (response.status !== 200) {
+          dispatch(addToFavesErred(true));
+        } else {
+          return response;
+        }
+      })
+      .then(() => dispatch(addToFavesSuccess(movie)))
+      .catch(() => {
         dispatch(addToFavesErred(true));
-      } else {
-        return response
-      }
-    })
-    .then(() => dispatch(addToFavesSuccess(movie)))
-    .catch(() => {
-      dispatch(addToFavesErred(true))
-    })
-  }
-}
+      });
+  };
+};
 
-export const removeFavesSuccess = (movie) => {
+export const removeFavesSuccess = movie => {
   return {
-    type: 'REMOVE_FAVES_SUCCESS',
+    type: "REMOVE_FAVES_SUCCESS",
     movie
-  }
-}
+  };
+};
 
-export const removeFavesErred = (bool) => {
+export const removeFavesErred = bool => {
   return {
-    type: 'REMOVE_FAVES_ERRED',
+    type: "REMOVE_FAVES_ERRED",
     removeFavesErred: bool
-  }
-}
+  };
+};
 
-export const removeFromFaves = (movie) => {
+export const removeFromFaves = movie => {
   return dispatch => {
     fetch(`api/users/${movie.user_id}/favorites/${movie.movie_id}`, {
       method: "DELETE",
@@ -190,16 +194,43 @@ export const removeFromFaves = (movie) => {
         "Content-Type": "application/json"
       }
     })
-    .then(response => {
-      if (response.status !== 200) {
+      .then(response => {
+        if (response.status !== 200) {
+          dispatch(removeFavesErred(true));
+        } else {
+          return response;
+        }
+      })
+      .then(() => dispatch(removeFavesSuccess(movie)))
+      .catch(() => {
         dispatch(removeFavesErred(true));
-      } else {
-        return response
-      }
-    })
-    .then(() => dispatch(removeFavesSuccess(movie)))
-    .catch(() => {
-      dispatch(removeFavesErred(true))
-    })
+      });
+  };
+};
+
+export const retrieveFavesSuccess = (favoritesArray) => {
+  return {
+    type: "RETRIEVE_FAVES_SUCCESS",
+    favoritesArray
   }
 }
+
+export const retrieveAllFaves = userId => {
+  return dispatch => {
+    dispatch(fetchIsLoading(true));
+
+    fetch(`/users/${userId}/favorites`)
+      .then(response => {
+        if (response.status !== 200) {
+          dispatch(fetchHasErred(true));
+        }
+
+        dispatch(fetchIsLoading(false));
+
+        return response;
+      })
+      .then(response => response.json())
+      .then(parsedResponse => dispatch(retrieveFavesSuccess(parsedResponse.data)))
+      .catch(() => dispatch(fetchHasErred(true)));
+  };
+};

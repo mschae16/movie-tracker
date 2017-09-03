@@ -6,6 +6,7 @@ import { createUserErred, createUserSuccess } from './create-user-reducer'
 import { logOutUser, createUserSignOut } from './sign-out-reducer'
 import { addToFavesErred } from './add-faves-reducer'
 import { removeFavesErred } from './remove-faves-reducer'
+import { retrieveFavesSuccess } from './retrieve-faves-reducer.js'
 
 const rootReducer = combineReducers({
   loginLogoutSuccess,
@@ -15,6 +16,7 @@ const rootReducer = combineReducers({
   fetchDataSuccess,
   createUserErred,
   addToFavesErred,
+  retrieveFavesSuccess,
   routing: routerReducer
 });
 
