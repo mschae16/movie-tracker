@@ -17,7 +17,7 @@ export class Favorites extends Component {
 	}
 
   render() {
-    const { loginLogoutSuccess, hasErred, isLoading, favoritesData, removeFromFaves } = this.props;
+    const { loginLogoutSuccess, hasErred, isLoading, favoritesData, removeFromFaves, user } = this.props;
 
     if (loginLogoutSuccess === "") {
       return <Redirect to="/login" />;
@@ -34,6 +34,7 @@ export class Favorites extends Component {
       <MovieCard
         key={movie.title}
         {...movie}
+        user={user.id}
         handleFavorites={removeFromFaves}
       />
     ));

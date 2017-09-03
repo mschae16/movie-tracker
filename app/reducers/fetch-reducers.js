@@ -25,7 +25,7 @@ export const fetchDataSuccess = (state = [], action) => {
   switch (action.type) {
     case "FETCH_DATA_SUCCESS":
       return action.data.map( movie => {
-        return Object.assign({}, movie, { isFaved: false })
+        return Object.assign({}, movie, {movie_id: movie.id}, { isFaved: false })
       });
 
     case "ADD_TO_FAVES_SUCCESS":

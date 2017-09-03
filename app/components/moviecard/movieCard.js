@@ -2,20 +2,20 @@ import React from "react";
 
 const MovieCard = ({
   title,
-  id: movie_id,
+  movie_id,
   overview,
   backdrop_path,
   poster_path,
   release_date,
   vote_average,
   isFaved,
-  handleFavorites
+  handleFavorites,
+  user: user_id
 }) => {
 
 
   const favorited = isFaved ? 'favorited' : ''
   const btnText = isFaved ? 'Remove' : 'Add'
-  console.log('btn Text', btnText)
 
   let backDrop = `https://image.tmdb.org/t/p/w500${poster_path}`
 
@@ -26,7 +26,8 @@ const MovieCard = ({
     poster_path,
     release_date,
     vote_average,
-    isFaved
+    isFaved,
+    user_id
   }
 
   return (
