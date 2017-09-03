@@ -9,7 +9,7 @@ export default class NavHeader extends Component {
 
 		handleLogout(logOutObject)
 		resetFavorites([])
-		// localStorage.setItem('user', )
+		localStorage.removeItem('user')
 	}
 
 	render() {
