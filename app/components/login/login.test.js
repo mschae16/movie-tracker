@@ -9,11 +9,11 @@ describe('Login page', () => {
     wrapper = shallow(<Login />)
   })
 
-  test('should exist', () => {
+  test.skip('should exist', () => {
     expect(wrapper).toBeDefined()
   })
 
-  test('should have a default state', () => {
+  test.skip('should have a default state', () => {
     expect(wrapper.state()).toEqual({
       email: '',
       password: ''

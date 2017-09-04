@@ -9,11 +9,11 @@ describe('App', () => {
     wrapper = mount(<App />);
   })
 
-  it('should exist', () => {
+  it.skip('should exist', () => {
     expect(wrapper).toBeDefined();
   })
 
-  it('returns appropriate components on home-page load', () => {
+  it.skip('returns appropriate components on home-page load', () => {
     expect(wrapper.find('NavHeaderContainer').length).toEqual(1)
     expect(wrapper.find('MovieIndex').length).toEqual(1)
   })

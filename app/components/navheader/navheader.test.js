@@ -9,7 +9,7 @@ describe('Nav Header', () => {
     wrapper = shallow(<NavHeader />)
   })
 
-  test('should exist', () => {
+  test.skip('should exist', () => {
     expect(wrapper).toBeDefined()
   })
 
