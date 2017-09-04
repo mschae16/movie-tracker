@@ -19,10 +19,16 @@ describe('Movie Index', () => {
     })
   })
 
-  test('should run componentDidMount after mounting', () => {
-    wrapper.instance().componentDidMount = jest.fn()
-    wrapper.instance().componentDidMount()
+  test('should run componentDidMount after mounting and fetch data', () => {
+    wrapper = mount(<MovieIndex />)
+    wrapper.instance().fetchData = jest.fn()
+    
     expect(wrapper.instance().componentDidMount).toHaveBeenCalled()
+    expect(this.props.fetchData).toHaveBeenCalled()
+  })
+
+  test('should render the current movies upon mounting and fetching data', () => {
+    expect(wrapper.find('section').length).toEqual(1)
   })
 
 })
