@@ -65,3 +65,47 @@
   border-left: 1.5px solid #E71D36;
   cursor: pointer;
 }
+
+/*MEDIA QUERIES*/
+
+@media screen and (max-width: 1024px) {
+  .navigation-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-links {
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .nav {
+    padding: 10px;
+  }
+
+  .movie-tracker-header {
+    height: 80px;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    width: auto;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+  }
+
+  .nav {
+    height: auto;
+  }
+
+  .movie-tracker-header {
+    font-size: 35px;
+    height: auto;
+  }
+}

@@ -20,39 +20,40 @@ export default class NavHeader extends Component {
           <div className="slide-right">
             <header className="movie-tracker-header">MovieTracker</header>
           </div>
-
-          <NavLink activeClassName="selected" className="nav" to="/">
-            Home
-          </NavLink>
-
-          {loginLogoutSuccess !== "success" && (
-            <NavLink activeClassName="selected" className="nav" to="/login">
-              Login
+          <div className="nav-links">
+            <NavLink activeClassName="selected" className="nav" to="/">
+              Home
             </NavLink>
-          )}
 
-          {loginLogoutSuccess !== "success" && (
-            <NavLink
-              activeClassName="selected"
-              className="nav"
-              to="/createuser"
-            >
-              CreateUser
+            {loginLogoutSuccess !== "success" && (
+              <NavLink activeClassName="selected" className="nav" to="/login">
+                Login
+              </NavLink>
+            )}
+
+            {loginLogoutSuccess !== "success" && (
+              <NavLink
+                activeClassName="selected"
+                className="nav"
+                to="/createuser"
+              >
+                CreateUser
+              </NavLink>
+            )}
+
+            {loginLogoutSuccess === "success" && (
+              <button
+                className="sign-out-btn"
+                onClick={() => this.logoutReRender()}
+              >
+                Sign Out
+              </button>
+            )}
+
+            <NavLink activeClassName="selected" className="nav" to="/favorites">
+              Favorites
             </NavLink>
-          )}
-
-          {loginLogoutSuccess === "success" && (
-            <button
-              className="sign-out-btn"
-              onClick={() => this.logoutReRender()}
-            >
-              Sign Out
-            </button>
-          )}
-
-          <NavLink activeClassName="selected" className="nav" to="/favorites">
-            Favorites
-          </NavLink>
+          </div>
         </section>
       </div>
     );
