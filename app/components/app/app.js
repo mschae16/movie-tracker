@@ -17,7 +17,6 @@ const App = () => {
           return (
             <div>
               <CreateUserContainer />
-              <MovieIndex />
             </div>
           );
         }}
@@ -29,13 +28,12 @@ const App = () => {
           return (
             <div>
               <LoginContainer />
-              <MovieIndex />
             </div>
           );
         }}
       />
       <Route exact path="/favorites" component={Favorites} />
-      <Route exact path="/" render={ () => <MovieIndex /> } />
+      <Route exact path="/" render={() => <MovieIndex />} />
     </div>
   );
 };
