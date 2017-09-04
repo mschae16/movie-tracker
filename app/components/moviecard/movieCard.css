@@ -6,17 +6,13 @@
   overflow: hidden;
 }
 
-.favorited {
-  border: 3px solid chartreuse;
-}
-
 .movie-card:hover {
   cursor: pointer;
 }
 
 .info-hover {
   position: absolute;
-  top: 0;
+  top: 54px;
   left: 0;
   height: 100%;
   width: 100%;
@@ -35,13 +31,13 @@
   text-align: center;
 }
 
-.movie-card:hover .text {
+.info-hover:hover .text {
   display: block;
 }
 
 .movie-image {
   animation-name: fade;
-  animation-duration: 5s;
+  animation-duration: 2s;
   height: 100%;
   width: 100%;
 }
@@ -62,15 +58,31 @@
   }
 }
 
-/*.favorite-button {
-  background: white;
-  opacity: 0.7;
-  border: 2px solid black;
-  border-radius: 50%;
-  height: 40px;
-  width: 40px;
+.hover-section-title {
+  color: #e71d36;
+  font-size: 20px;
+}
+
+.additional-info{
+  padding: 10px;
+}
+
+.favorite-button {
+  font-size: 15px;
+  color: #fff;
+  background: #011627;
+  cursor: pointer;
+  border: none;
+  height: 25px;
+  width: 100%;
 }
 
 .favorite-button:hover {
-  cursor: pointer;
-}*/
+  color: #011627;
+  background: #fff;
+}
+
+.favorited {
+  background: #ff9f1c;
+  color: #011627;
+}

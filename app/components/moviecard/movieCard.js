@@ -12,12 +12,10 @@ const MovieCard = ({
   handleFavorites,
   user: user_id
 }) => {
+  const favorited = isFaved ? "favorited" : "";
+  const btnText = isFaved ? "Remove from Favorites" : "Add to Favorites";
 
-
-  const favorited = isFaved ? 'favorited' : ''
-  const btnText = isFaved ? 'Remove' : 'Add'
-
-  let backDrop = `https://image.tmdb.org/t/p/w500${poster_path}`
+  let backDrop = `https://image.tmdb.org/t/p/w500${poster_path}`;
 
   const movie = {
     title,
@@ -28,26 +26,26 @@ const MovieCard = ({
     vote_average,
     isFaved,
     user_id
-  }
+  };
 
   return (
-    <div className={`movie-card ${favorited}`}>
+    <div className="movie-card">
+      <h5 className="movie-title">{title}</h5>
+      <button className={`favorite-button ${favorited}`} onClick={() => handleFavorites(movie)}>{btnText}</button>
       <div className="info-hover">
         <p className="overview text">
           <span className="hover-section-title">Synopsis: </span>
-          {overview}
+          <p>{overview}</p>
         </p>
         <p className="additional-info text">
-          <span className="hover-section-title">Release Date:</span>
-          {release_date}
+          <span className="hover-section-title">Release Date: </span>
+          <p>{release_date}</p>
         </p>
         <p className="additional-info text">
           <span className="hover-section-title">Vote Average: </span>
-          {vote_average} / 10
+          <p>{vote_average} / 10</p>
         </p>
       </div>
-      <h5 className="movie-title">{title}</h5>
-      <button onClick={() => handleFavorites(movie)}>{btnText}</button>
       <img className="movie-image" src={backDrop} alt="backdrop image" />
     </div>
   );
