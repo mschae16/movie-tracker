@@ -13,7 +13,7 @@ const MovieCard = ({
   user: user_id
 }) => {
   const favorited = isFaved ? "favorited" : "";
-  const btnText = isFaved ? "Remove" : "Add";
+  const btnText = isFaved ? "Remove from Favorites" : "Add to Favorites";
 
   let backDrop = `https://image.tmdb.org/t/p/w500${poster_path}`;
 
@@ -29,9 +29,9 @@ const MovieCard = ({
   };
 
   return (
-    <div className={`movie-card ${favorited}`}>
+    <div className="movie-card">
       <h5 className="movie-title">{title}</h5>
-      <button onClick={() => handleFavorites(movie)}>{btnText}</button>
+      <button className={`favorite-button ${favorited}`} onClick={() => handleFavorites(movie)}>{btnText}</button>
       <div className="info-hover">
         <p className="overview text">
           <span className="hover-section-title">Synopsis: </span>

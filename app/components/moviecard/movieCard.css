@@ -12,7 +12,7 @@
 
 .info-hover {
   position: absolute;
-  top: 48px;
+  top: 54px;
   left: 0;
   height: 100%;
   width: 100%;
@@ -31,7 +31,7 @@
   text-align: center;
 }
 
-.movie-card:hover .text {
+.info-hover:hover .text {
   display: block;
 }
 
@@ -67,9 +67,22 @@
   padding: 10px;
 }
 
-.star {
-  color: white;
-  background: red;
-  height: 50px;
-  width: 50px;
+.favorite-button {
+  font-size: 15px;
+  color: #fff;
+  background: #011627;
+  cursor: pointer;
+  border: none;
+  height: 25px;
+  width: 100%;
+}
+
+.favorite-button:hover {
+  color: #011627;
+  background: #fff;
+}
+
+.favorited {
+  background: #ff9f1c;
+  color: #011627;
 }
