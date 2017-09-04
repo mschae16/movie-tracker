@@ -12,11 +12,11 @@
 
 .info-hover {
   position: absolute;
-  top: 54px;
+  top: 95px;
   left: 0;
   height: 100%;
   width: 100%;
-  padding-top: 100px;
+  padding: 20px 5px;
 }
 
 .info-hover:hover {
@@ -43,6 +43,8 @@
 }
 
 .movie-title {
+  min-height: 70px;
+  padding: 5px;
   background: #e71d36;
   border-bottom: 1px solid #ff9f1c;
   color: #ffffff;
