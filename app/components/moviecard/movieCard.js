@@ -33,18 +33,18 @@ const MovieCard = ({
       <h5 className="movie-title">{title}</h5>
       <button className={`favorite-button ${favorited}`} onClick={() => handleFavorites(movie)}>{btnText}</button>
       <div className="info-hover">
-        <p className="overview text">
+        <div className="overview text">
           <span className="hover-section-title">Synopsis: </span>
           <p>{overview}</p>
-        </p>
-        <p className="additional-info text">
+        </div>
+        <div className="additional-info text">
           <span className="hover-section-title">Release Date: </span>
           <p>{release_date}</p>
-        </p>
-        <p className="additional-info text">
+        </div>
+        <div className="additional-info text">
           <span className="hover-section-title">Vote Average: </span>
           <p>{vote_average} / 10</p>
-        </p>
+        </div>
       </div>
       <img className="movie-image" src={backDrop} alt="backdrop image" />
     </div>
