@@ -32,7 +32,7 @@ describe("Movie Index", () => {
   test('should run componentDidMount after mounting and fetch data', () => {
     wrapper = mount(<MovieIndex />)
     wrapper.instance().fetchData = jest.fn()
-    
+
     expect(wrapper.instance().componentDidMount).toHaveBeenCalled()
     expect(this.props.fetchData).toHaveBeenCalled()
   })

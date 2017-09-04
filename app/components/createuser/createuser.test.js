@@ -9,6 +9,7 @@ describe("CreateUser page", () => {
     wrapper = shallow(<CreateUser />);
   });
 
+
   afterEach(() => {
     localStorage.clear();
   });
@@ -34,7 +35,7 @@ describe("CreateUser page", () => {
     nameInput.simulate("change", { target: { value: "Margo" } });
     emailInput.simulate("change", { target: { value: "margo@margo.com" } });
     password.simulate("change", { target: { value: "margo" } });
-
+    
     expect(wrapper.state()).toEqual({
       user: {},
       name: "Margo",
