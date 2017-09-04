@@ -1,21 +1,47 @@
 .movie-card {
-  background: black;
+  position: relative;
+  background: #000;
   box-shadow: 7px 4px 4px #1c2328;
+  border-radius: 12px;
   overflow: hidden;
 }
 
 .favorited {
-  border: 5px solid chartreuse;
+  border: 3px solid chartreuse;
 }
 
 .movie-card:hover {
   cursor: pointer;
-  opacity: 0.5;
+}
+
+.info-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  padding-top: 100px;
+}
+
+.info-hover:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  transition: all 0.5s ease-in;
+}
+
+.text {
+  color: #fff;
+  display: none;
+  text-align: center;
+}
+
+.movie-card:hover .text {
+  display: block;
 }
 
 .movie-image {
   animation-name: fade;
-  animation-duration: 8s;
+  animation-duration: 5s;
   height: 100%;
   width: 100%;
 }
@@ -34,16 +60,6 @@
   100% {
     opacity: 1;
   }
-}
-
-.info-hover {
-  display: none;
-  position: absolute;
-  color: chartreuse;
-}
-
-.info-hover:hover {
-  display: block;
 }
 
 /*.favorite-button {

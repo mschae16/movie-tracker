@@ -32,10 +32,13 @@
 }
 
 .nav {
+  height: 60px;
   color: #FF9F1C;
   border-left: 1.5px solid #011627;
+  margin: 0 5px;
   padding: 20px;
   text-decoration: none;
+  font-size: 20px;
 }
 
 .nav:hover {
@@ -46,4 +49,19 @@
 .selected {
   color: #2EC4B6;
   text-decoration: none;
+}
+
+.sign-out-btn {
+  height: 60px;
+  background: none;
+  border: none;
+  color: #FF9F1C;
+  font-size: 20px;
+  margin: 0 5px;
+  padding: 0 20px;
+}
+
+.sign-out-btn:hover {
+  border-left: 1.5px solid #E71D36;
+  cursor: pointer;
 }

@@ -33,15 +33,15 @@ const MovieCard = ({
   return (
     <div className={`movie-card ${favorited}`}>
       <div className="info-hover">
-        <p className="overview">
+        <p className="overview text">
           <span className="hover-section-title">Synopsis: </span>
           {overview}
         </p>
-        <p className="additional-info">
+        <p className="additional-info text">
           <span className="hover-section-title">Release Date:</span>
           {release_date}
         </p>
-        <p className="additional-info">
+        <p className="additional-info text">
           <span className="hover-section-title">Vote Average: </span>
           {vote_average} / 10
         </p>

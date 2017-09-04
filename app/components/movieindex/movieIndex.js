@@ -47,7 +47,6 @@ export class MovieIndex extends Component {
 			removeFromFaves
 		} = this.props;
 
-
 		movie.user_id = user.id;
 
 		if (loginLogoutSuccess === '' && movie) {
@@ -82,11 +81,6 @@ export class MovieIndex extends Component {
 	render() {
 
 		const { loginLogoutSuccess, user, retrieveFavorites } = this.props;
-
-		// if (loginLogoutSuccess === 'success') {
-		// 	console.log('logged in!');
-		// 	retrieveFavorites(user.id);
-		// }
 
 		const { hasErred, isLoading, movieData } = this.props;
 
