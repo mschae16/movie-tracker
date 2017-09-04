@@ -23,7 +23,8 @@ describe('Movie Card', () => {
     expect(wrapper.find('.movie-image').length).toEqual(1);
   })
 
-  it.skip('upon hover, it should display...', () => {
-
+  it('upon hover, it should display movie synopsis', () => {
+    expect(wrapper.find('.info-hover').length).toEqual(1);
+    expect(wrapper.find('p').length).toEqual(6)
   })
 })
