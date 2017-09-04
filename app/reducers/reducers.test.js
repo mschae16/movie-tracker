@@ -189,3 +189,25 @@ describe('retrieve faves reducer', () => {
   expect(retrieveFavesSuccess(mockFavoritesArray, action)).toEqual(expectedResult)
   })
 })
+
+describe('sign out reducer', () => {
+  it('it should give me a default state for logOutUser', () => {
+    const defaultState = 'success'
+    expect(logOutUser(undefined, {})).toEqual(defaultState)
+  })
+
+  it('should give me default state for createUserSignOut', () => {
+    const defaultState = { status: 'success' }
+    expect(createUserSignOut(undefined, {})).toEqual(defaultState)
+  })
+
+  it('should return success if logout was successful', () => {
+    const action = { type: 'LOG_OUT_USER', loginSuccess: 'success'}
+      expect(fetchHasErred(undefined, action)).toEqual('success')
+  })
+
+  it('should return success if createUserSignOut was successful', () => {
+    const action = { type: 'LOG_OUT_USER', createUserSuccess 'success'}
+      expect(fetchHasErred(undefined, action)).toEqual('success')
+  })
+})
