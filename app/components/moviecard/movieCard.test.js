@@ -23,8 +23,10 @@ describe('Movie Card', () => {
     expect(wrapper.find('.movie-image').length).toEqual(1);
   })
 
-  test('upon hover, it should display movie data over movie card', () => {
+
+  test('upon hover, it should display movie synopsis', () => {
     expect(wrapper.find('.info-hover').length).toEqual(1);
+    expect(wrapper.find('p').length).toEqual(6)
   })
 
   test('should add to favorites when favorite button is clicked', () => {
