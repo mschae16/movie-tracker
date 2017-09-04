@@ -28,6 +28,18 @@ describe("Movie Index", () => {
     wrapper.instance().componentDidMount();
     expect(wrapper.instance().componentDidMount).toHaveBeenCalled();
   });
+    
+  test('should run componentDidMount after mounting and fetch data', () => {
+    wrapper = mount(<MovieIndex />)
+    wrapper.instance().fetchData = jest.fn()
+    
+    expect(wrapper.instance().componentDidMount).toHaveBeenCalled()
+    expect(this.props.fetchData).toHaveBeenCalled()
+  })
+
+  test('should render the current movies upon mounting and fetching data', () => {
+    expect(wrapper.find('section').length).toEqual(1)
+  })
 
   test("should be able to retrieve user from localStorage", () => {
     const user = { email: "margo@margo.com", password: "margo" };
