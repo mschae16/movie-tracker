@@ -108,5 +108,38 @@ describe('fetch data success reducer', () => {
 
   expect(fetchDataSuccess(mockMovieData.results, action)).toEqual(expectedResult)
   })
+})
 
+describe('login reducer', () => {
+  it('it should give me a default state for loginLogoutSuccess', () => {
+    const expectedDefault = {status: ''}
+    expect(loginLogoutSuccess(undefined, {})).toEqual(expectedDefault)
+  })
+
+  it('it should give me a default state for loginHasErred', () => {
+    expect(loginHasErred(undefined, {})).toEqual(false)
+  })
+
+  it('should give me true for isLoading when fetch loads', () => {
+    const mockUser = { id: 4,
+                      name: "margo",
+                      password: "Dont even think about it",
+                      email: "margo@margo.com",
+                      status: "success"
+                      }
+    const action = { type: 'LOGIN_SUCCESS', mockUser}
+    expect(loginLogoutSuccess(undefined, action)).toEqual(mockUser)
+  })
+
+  it('should return false or login has erred if login successful', () => {
+    const mockUser = { id: 4,
+                      name: "margo",
+                      password: "Dont even think about it",
+                      email: "margo@margo.com",
+                      status: "success"
+                      }
+    const action = { type: 'LOGIN_SUCCESS', mockUser}
+
+    expect(loginHasErred(undefined, action)).toEqual(false)
+  })
 })
