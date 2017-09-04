@@ -11,6 +11,7 @@ import logOutUser from './sign-out-reducer'
 import createUserSignOut from './sign-out-reducer'
 import mockMovieData from '../helpers/mockMovieData'
 import mockMovieObject from '../helpers/mockMovieObject'
+import mockFavoritesArray from '../helpers/mockFavoritesArray'
 
 describe('add to faves reducer', () => {
   it('it should give me a default state', () => {
@@ -157,5 +158,34 @@ describe('remove faves reducer', () => {
   it('should return false if remove faves successful', () => {
     const action = { type: 'REMOVE_FAVES_SUCCESS', {}}
     expect(removesFavesErred(undefined, action)).toEqual(false)
+  })
+})
+
+describe('retrieve faves reducer', () => {
+  it('it should give me a default state', () => {
+    expect(retrieveFavesSuccess(undefined, {})).toEqual([])
+  })
+
+  it('should give me a new array of movies when successful', () => {
+    const action = {type: 'RETRIEVE_FAVES_SUCCESS', favoritesArray: mockFavoritesArray}
+    const expectedResult = action.favoritesArray.map(favorite =>
+      Object.assign({ isFaved: true }, favorite)
+    );
+
+    expect(retrieveFavesSuccess(mockFavoritesArray, action)).toEqual(expectedResult)
+  })
+
+  it('return a new array with the removed movie from the retrieve faves success array', () => {
+    const action = {type: 'REMOVE_FAVES_SUCCESS', movie: mockMovieData }
+    const expectedResult = mockFavoritesArray.filter(movie => movie.title !== action.movie.title)
+
+    expect(retrieveFavesSuccess(mockFavoritesArray, action)).toEqual(expectedResult)
+    )
+
+  it('should reset favorites array')
+  const action = { type: 'RESET_FAVORITES', emptyFavoritesArray: [] }
+  const expectedResult = []
+
+  expect(retrieveFavesSuccess(mockFavoritesArray, action)).toEqual(expectedResult)
   })
 })
