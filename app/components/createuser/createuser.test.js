@@ -9,6 +9,10 @@ describe("CreateUser page", () => {
     wrapper = shallow(<CreateUser />);
   });
 
+  afterEach(() => {
+    localStorage.clear();
+  });
+
   test("should exist", () => {
     expect(wrapper).toBeDefined();
   });
@@ -48,4 +52,11 @@ describe("CreateUser page", () => {
     submitInput.simulate("click");
     expect(mockFn).toHaveBeenCalledTimes(1);
   });
+
+  test('should be able to save user to localStorage', () => {
+    const user = { email: 'margo@margo.com', password: 'margo' };
+    wrapper.instance().sendToStorage(user);
+    expect(localStorage.store.user).toEqual({ email: 'margo@margo.com', password: 'margo' });
+  });
+
 });
