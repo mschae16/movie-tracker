@@ -21,12 +21,12 @@ export default class NavHeader extends Component {
             <header className="movie-tracker-header">MovieTracker</header>
           </div>
           <div className="nav-links">
-            <NavLink activeClassName="selected" className="nav" to="/">
+            <NavLink activeClassName="selected" className="nav" exact to="/">
               Home
             </NavLink>
 
             {loginLogoutSuccess !== "success" && (
-              <NavLink activeClassName="selected" className="nav" to="/login">
+              <NavLink activeClassName="selected" className="nav" exact to="/login">
                 Login
               </NavLink>
             )}
@@ -35,7 +35,7 @@ export default class NavHeader extends Component {
               <NavLink
                 activeClassName="selected"
                 className="nav"
-                to="/createuser"
+                exact to="/createuser"
               >
                 CreateUser
               </NavLink>
@@ -50,7 +50,7 @@ export default class NavHeader extends Component {
               </button>
             )}
 
-            <NavLink activeClassName="selected" className="nav" to="/favorites">
+            <NavLink activeClassName="selected" className="nav" exact to="/favorites">
               Favorites
             </NavLink>
           </div>
