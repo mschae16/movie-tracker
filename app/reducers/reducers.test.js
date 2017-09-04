@@ -143,3 +143,19 @@ describe('login reducer', () => {
     expect(loginHasErred(undefined, action)).toEqual(false)
   })
 })
+
+describe('remove faves reducer', () => {
+  it('it should give me a default state', () => {
+    expect(removesFavesErred(undefined, {})).toEqual(false)
+  })
+
+  it('should return true if remove faves erred', () => {
+    const action = { type: 'REMOVE_FAVES_ERRED', removeFavesErred: true}
+    expect(removesFavesErred(undefined, action)).toEqual(true)
+  })
+
+  it('should return false if remove faves successful', () => {
+    const action = { type: 'REMOVE_FAVES_SUCCESS', {}}
+    expect(removesFavesErred(undefined, action)).toEqual(false)
+  })
+})
