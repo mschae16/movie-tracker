@@ -99,3 +99,12 @@ describe('actions', () => {
     expect(actions.retrieveFavesSuccess()).toEqual(expectedAction)
   })
 })
+
+it('should create an action to reset the favorites array in store after removing from database', () => {
+  const array = []
+  const expectedAction = {
+    type: 'RESET_FAVORITES',
+    emptyFavoritesArray: array
+  }
+  expect(actions.resetFavorites(array)).toEqual(expectedAction)
+})

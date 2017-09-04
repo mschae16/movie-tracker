@@ -9,7 +9,7 @@ describe('Favorites page', () => {
     wrapper = shallow(<Favorites />)
   })
 
-  test('should exist', () => {
+  test.skip('should exist', () => {
     expect(wrapper).toBeDefined()
   })
 })
