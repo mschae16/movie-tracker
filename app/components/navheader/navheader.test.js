@@ -13,4 +13,11 @@ describe('Nav Header', () => {
     expect(wrapper).toBeDefined()
   })
 
+  test('sign out button should log out on click', () => {
+    wrapper.logoutReRender = jest.fn()
+    let signOutBtn = wrapper.find('.sign-out-btn')
+    signOutBtn.simulate('click')
+    expect(wrapper.logoutReRender).toHaveBeenCalledTimes(1)
+  })
+
 })
