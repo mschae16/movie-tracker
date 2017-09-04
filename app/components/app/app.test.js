@@ -9,25 +9,38 @@ describe('App', () => {
     wrapper = mount(<App />);
   })
 
-  it.skip('should exist', () => {
+  test('should exist', () => {
     expect(wrapper).toBeDefined();
   })
 
-  it.skip('returns appropriate components on home-page load', () => {
+  test('returns appropriate components on home-page load', () => {
     expect(wrapper.find('NavHeaderContainer').length).toEqual(1)
     expect(wrapper.find('MovieIndex').length).toEqual(1)
   })
 
-  it.skip('returns the create user page when the route path changes to /createuser', () => {
+  test('navigates around and the route path changes', () => {
+    const renderTestSequence = ({
+      subject: Subject,
+      steps
+    })
 
-  })
+    const div = document.createElement('div')
 
-  it.skip('returns the login page when the route path changes to /login', () => {
+    renderTestSequence({
+      subject: wrapper,
+      steps: [
+        ({ history, div }) => {
+          history.push('/')
+        },
 
-  })
+        ({ div }) => {
+          Simulate.click(div.querySelector('.nav'))
+        },
 
-  it.skip('returns the favorites page when the route path changes to /favorites and the user is logged-in appropriately', () => {
-
-  })
+        ({ location }) => {
+          console.assert(location.pathname === '/createuser')
+        }]
+      })
+    })
 
 })
